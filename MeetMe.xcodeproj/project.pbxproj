@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E5CF8F8DBF5E5A2AF039073 /* Pods_MeetMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341866DC42954B0F49AA654E /* Pods_MeetMe.framework */; };
 		9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C48C28162D6E0088177D /* AppDelegate.swift */; };
 		9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C48E28162D6E0088177D /* SceneDelegate.swift */; };
-		9338C49128162D6E0088177D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C49028162D6E0088177D /* ViewController.swift */; };
+		9338C49128162D6E0088177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C49028162D6E0088177D /* LoginViewController.swift */; };
 		9338C49428162D6E0088177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49228162D6E0088177D /* Main.storyboard */; };
 		9338C49628162D700088177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49528162D700088177D /* Assets.xcassets */; };
 		9338C49928162D700088177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49728162D700088177D /* LaunchScreen.storyboard */; };
+		9338C4A1281634C10088177D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9338C4A0281634C10088177D /* GoogleService-Info.plist */; };
+		9338C4A328163F970088177D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A228163F970088177D /* HomeViewController.swift */; };
+		9338C4A5281642500088177D /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A4281642500088177D /* SavedViewController.swift */; };
+		9338C4A7281642B60088177D /* SavedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A6281642B60088177D /* SavedDetailViewController.swift */; };
+		9338C4A92816436F0088177D /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A82816436F0088177D /* NewViewController.swift */; };
+		9338C4AB281643D40088177D /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4AA281643D40088177D /* NewFriendViewController.swift */; };
+		9338C4AD281651A30088177D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4AC281651A30088177D /* ActivityViewController.swift */; };
+		9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4AE281654FA0088177D /* OptionViewController.swift */; };
+		9338C4B1281655220088177D /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B0281655220088177D /* AdventureViewController.swift */; };
+		9338C4B3281655AA0088177D /* MidpointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B2281655AA0088177D /* MidpointViewController.swift */; };
+		9338C4B52816EA150088177D /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B42816EA140088177D /* Spot.swift */; };
+		9338C4B72816EA3D0088177D /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B62816EA3D0088177D /* Spots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341866DC42954B0F49AA654E /* Pods_MeetMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9338C48928162D6E0088177D /* MeetMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9338C48C28162D6E0088177D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9338C48E28162D6E0088177D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9338C49028162D6E0088177D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9338C49028162D6E0088177D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9338C49328162D6E0088177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9338C49528162D700088177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9338C49828162D700088177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9338C49A28162D700088177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9338C4A0281634C10088177D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9338C4A228163F970088177D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9338C4A4281642500088177D /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		9338C4A6281642B60088177D /* SavedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDetailViewController.swift; sourceTree = "<group>"; };
+		9338C4A82816436F0088177D /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		9338C4AA281643D40088177D /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
+		9338C4AC281651A30088177D /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		9338C4AE281654FA0088177D /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		9338C4B0281655220088177D /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
+		9338C4B2281655AA0088177D /* MidpointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointViewController.swift; sourceTree = "<group>"; };
+		9338C4B42816EA140088177D /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		9338C4B62816EA3D0088177D /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
+		B2F5F4381ECDF4708E233B97 /* Pods-MeetMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.release.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.release.xcconfig"; sourceTree = "<group>"; };
+		B5D8D0AE25C093A2A65B0A34 /* Pods-MeetMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.debug.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5CF8F8DBF5E5A2AF039073 /* Pods_MeetMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A9888C63A9CFC15E9045161 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5D8D0AE25C093A2A65B0A34 /* Pods-MeetMe.debug.xcconfig */,
+				B2F5F4381ECDF4708E233B97 /* Pods-MeetMe.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9338C48028162D6E0088177D = {
 			isa = PBXGroup;
 			children = (
 				9338C48B28162D6E0088177D /* MeetMe */,
 				9338C48A28162D6E0088177D /* Products */,
+				8A9888C63A9CFC15E9045161 /* Pods */,
+				E5D29EFEAAF558F2C5576BA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +98,33 @@
 			children = (
 				9338C48C28162D6E0088177D /* AppDelegate.swift */,
 				9338C48E28162D6E0088177D /* SceneDelegate.swift */,
-				9338C49028162D6E0088177D /* ViewController.swift */,
+				9338C4B42816EA140088177D /* Spot.swift */,
+				9338C4B62816EA3D0088177D /* Spots.swift */,
+				9338C49028162D6E0088177D /* LoginViewController.swift */,
+				9338C4A228163F970088177D /* HomeViewController.swift */,
+				9338C4A4281642500088177D /* SavedViewController.swift */,
+				9338C4A6281642B60088177D /* SavedDetailViewController.swift */,
+				9338C4A82816436F0088177D /* NewViewController.swift */,
+				9338C4AA281643D40088177D /* NewFriendViewController.swift */,
+				9338C4B2281655AA0088177D /* MidpointViewController.swift */,
+				9338C4AC281651A30088177D /* ActivityViewController.swift */,
+				9338C4AE281654FA0088177D /* OptionViewController.swift */,
+				9338C4B0281655220088177D /* AdventureViewController.swift */,
 				9338C49228162D6E0088177D /* Main.storyboard */,
 				9338C49528162D700088177D /* Assets.xcassets */,
 				9338C49728162D700088177D /* LaunchScreen.storyboard */,
 				9338C49A28162D700088177D /* Info.plist */,
+				9338C4A0281634C10088177D /* GoogleService-Info.plist */,
 			);
 			path = MeetMe;
+			sourceTree = "<group>";
+		};
+		E5D29EFEAAF558F2C5576BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				341866DC42954B0F49AA654E /* Pods_MeetMe.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9338C49D28162D700088177D /* Build configuration list for PBXNativeTarget "MeetMe" */;
 			buildPhases = (
+				45B1CAD95730B8B7F0E06FA4 /* [CP] Check Pods Manifest.lock */,
 				9338C48528162D6E0088177D /* Sources */,
 				9338C48628162D6E0088177D /* Frameworks */,
 				9338C48728162D6E0088177D /* Resources */,
+				C0915D8CF5A3B592794DC68D /* [CP] Embed Pods Frameworks */,
+				D39BD49DF974D016C866D1FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9338C49928162D700088177D /* LaunchScreen.storyboard in Resources */,
+				9338C4A1281634C10088177D /* GoogleService-Info.plist in Resources */,
 				9338C49628162D700088177D /* Assets.xcassets in Resources */,
 				9338C49428162D6E0088177D /* Main.storyboard in Resources */,
 			);
@@ -133,14 +197,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45B1CAD95730B8B7F0E06FA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeetMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0915D8CF5A3B592794DC68D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D39BD49DF974D016C866D1FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeetMe/Pods-MeetMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9338C48528162D6E0088177D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9338C49128162D6E0088177D /* ViewController.swift in Sources */,
+				9338C49128162D6E0088177D /* LoginViewController.swift in Sources */,
+				9338C4B72816EA3D0088177D /* Spots.swift in Sources */,
+				9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */,
+				9338C4AB281643D40088177D /* NewFriendViewController.swift in Sources */,
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
+				9338C4A92816436F0088177D /* NewViewController.swift in Sources */,
+				9338C4AD281651A30088177D /* ActivityViewController.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
+				9338C4A7281642B60088177D /* SavedDetailViewController.swift in Sources */,
+				9338C4B1281655220088177D /* AdventureViewController.swift in Sources */,
+				9338C4A5281642500088177D /* SavedViewController.swift in Sources */,
+				9338C4B52816EA150088177D /* Spot.swift in Sources */,
+				9338C4B3281655AA0088177D /* MidpointViewController.swift in Sources */,
+				9338C4A328163F970088177D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +416,7 @@
 		};
 		9338C49E28162D700088177D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D8D0AE25C093A2A65B0A34 /* Pods-MeetMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +445,7 @@
 		};
 		9338C49F28162D700088177D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F5F4381ECDF4708E233B97 /* Pods-MeetMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
