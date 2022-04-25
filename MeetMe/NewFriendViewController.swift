@@ -2,7 +2,7 @@
 //  NewFriendViewController.swift
 //  MeetMe
 //
-//  Created by Annie DeMilt on 4/24/22.
+//  Created by Annie DeMilt on 4/25/22.
 //
 
 import UIKit
@@ -18,10 +18,4 @@ class NewFriendViewController: UIViewController {
     
     @IBAction func friendLookupButtonPressed(_ sender: UIButton) {
     }
-    
-    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-    }
-    
-    
-    
 }

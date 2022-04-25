@@ -2,7 +2,7 @@
 //  ActivityViewController.swift
 //  MeetMe
 //
-//  Created by Annie DeMilt on 4/24/22.
+//  Created by Annie DeMilt on 4/25/22.
 //
 
 import UIKit
@@ -21,8 +21,4 @@ override func viewDidLoad() {
     
     @IBAction func outdoorActivityButtonPressed(_ sender: UIButton) {
     }
-    
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-    }
-    
 }

@@ -18,8 +18,6 @@ class AdventureViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-    }
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
     }
 }
