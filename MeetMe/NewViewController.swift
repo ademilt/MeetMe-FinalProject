@@ -33,6 +33,6 @@ class NewViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         leaveViewController()
-    }
+    
 }
-
+}

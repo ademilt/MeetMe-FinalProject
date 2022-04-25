@@ -12,3 +12,4 @@ class SavedDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 }
+}
