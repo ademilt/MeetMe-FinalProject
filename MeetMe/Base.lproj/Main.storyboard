@@ -230,7 +230,6 @@
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="IfZ-IY-D2H" id="hyv-jS-jAJ"/>
-                                <segue destination="YYs-ko-ZDy" kind="presentation" modalPresentationStyle="fullScreen" id="s24-gh-uFg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -298,7 +297,7 @@
                                     <color key="baseForegroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="friendLookupButtonPressed:" destination="lV4-cx-52C" eventType="touchUpInside" id="K9s-6r-7qf"/>
+                                    <action selector="lookupButtonPressed:" destination="lV4-cx-52C" eventType="touchUpInside" id="QeD-5t-Tks"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-l0-kdP">
@@ -912,7 +911,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="lot-bS-7R8"/>
         <segue reference="8ga-Vc-ptP"/>
-        <segue reference="qMP-1S-o4B"/>
+        <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>

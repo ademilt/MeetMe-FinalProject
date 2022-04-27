@@ -1,5 +1,5 @@
 //
-//  FriendLocation.swift
+//  PersonalLocation.swift
 //  MeetMe
 //
 //  Created by Annie DeMilt on 4/26/22.
@@ -9,8 +9,8 @@ import Foundation
 import Firebase
 import MapKit
 
-class FriendLocation: NSObject, MKAnnotation {
-    var friendName: String
+class PersonalLocation: NSObject, MKAnnotation {
+    var firstName: String
     var name: String
     var address: String
     var coordinate: CLLocationCoordinate2D
@@ -18,7 +18,7 @@ class FriendLocation: NSObject, MKAnnotation {
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["friendName": friendName, "name": name, "address": address, "latitude": latitude, "longitude": longitude, "postingUserID": postingUserID, "documentID": documentID]
+        return ["firstName": firstName, "name": name, "address": address, "latitude": latitude, "longitude": longitude, "postingUserID": postingUserID, "documentID": documentID]
     }
     
     var latitude: CLLocationDegrees {
@@ -41,8 +41,8 @@ class FriendLocation: NSObject, MKAnnotation {
         return address
     }
     
-    init(friendName: String, name: String, address: String, coordinate: CLLocationCoordinate2D, postingUserID: String, documentID: String) {
-        self.friendName = friendName
+    init(firstName: String, name: String, address: String, coordinate: CLLocationCoordinate2D, postingUserID: String, documentID: String) {
+        self.firstName = firstName
         self.name = name
         self.address = address
         self.coordinate = coordinate
@@ -51,21 +51,21 @@ class FriendLocation: NSObject, MKAnnotation {
     }
     
     override convenience init() {
-        self.init(friendName: "", name: "", address: "", coordinate: CLLocationCoordinate2D(), postingUserID: "", documentID: "")
+        self.init(firstName: "", name: "", address: "", coordinate: CLLocationCoordinate2D(), postingUserID: "", documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
-        let friendName = dictionary["friendName"] as! String? ?? ""
+        let firstName = dictionary["firstName"] as! String? ?? ""
         let name = dictionary["name"] as! String? ?? ""
         let address = dictionary["address"] as! String? ?? ""
         let latitude = dictionary["latitude"] as! Double? ?? 0.0
         let longitude = dictionary["longitude"] as! Double? ?? 0.0
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-            self.init(friendName: name, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
+            self.init(firstName: name, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
     }
     
-    func saveData(location: PersonalLocation, completion: @escaping (Bool) -> ()) {
+    func saveData(completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         // Grab the user id
         guard let postingUserID = Auth.auth().currentUser?.uid else {
@@ -78,7 +78,7 @@ class FriendLocation: NSObject, MKAnnotation {
         // if we HAVE saved a record, we'll have an ID, otherwise .addDocument will create one
         if self.documentID == "" {
             var ref: DocumentReference? = nil // Firestore will create a new ID for us
-            ref = db.collection("locations").document(location.documentID).collection("friend").addDocument(data: dataToSave){ error in
+            ref = db.collection("locations").addDocument(data: dataToSave){ error in
                 guard error == nil else {
                     print("😡 ERROR: Adding document \(error!.localizedDescription).")
                     return completion(false)
@@ -88,7 +88,7 @@ class FriendLocation: NSObject, MKAnnotation {
                 completion(true)
             }
         } else { // else save to the existing document id with .setData
-            let ref = db.collection("locations").document(location.documentID).collection("friend").document(self.documentID)
+            let ref = db.collection("locations").document(self.documentID)
             ref.setData(dataToSave) { error in
                 guard error == nil else {
                     print("😡 ERROR: Updating document \(error!.localizedDescription).")
@@ -98,7 +98,5 @@ class FriendLocation: NSObject, MKAnnotation {
                 completion(true)
             }
         }
-        
     }
-    
 }

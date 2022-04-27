@@ -1,8 +1,8 @@
 //
-//  Adventures.swift
+//  Adventure.swift
 //  MeetMe
 //
-//  Created by Annie DeMilt on 4/26/22.
+//  Created by Annie DeMilt on 4/27/22.
 //
 
 import Foundation

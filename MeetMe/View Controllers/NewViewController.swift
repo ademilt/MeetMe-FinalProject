@@ -1,5 +1,5 @@
 //
-//  NewFriendViewController.swift
+//  NewViewController.swift
 //  MeetMe
 //
 //  Created by Annie DeMilt on 4/25/22.
@@ -10,20 +10,27 @@ import CoreLocation
 import GooglePlaces
 import MapKit
 import Contacts
+import QuartzCore
 
-class NewFriendViewController: UIViewController {
-   
-    @IBOutlet weak var friendTextField: UITextField!
-    @IBOutlet weak var friendLookupButton: UIButton!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+class NewViewController: UIViewController {
     
-    var friendLocation: PersonalLocation!
+    @IBOutlet weak var myNameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var lookupButton: UIButton!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var informationLabel: UILabel!
+    
+    var location: PersonalLocation!
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
+    var currentLocation: CLLocation!
+    //var myName: String!
     
     override func viewDidLoad() {
+        location = PersonalLocation()
+                
         super.viewDidLoad()
         
         //hide keyboard if we tap outside of a field
@@ -31,13 +38,13 @@ class NewFriendViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        //getLocation()
-        if friendLocation == nil {
-            friendLocation = PersonalLocation()
+        getLocation()
+        if location == nil {
+            location = PersonalLocation()
         } else {
             disableTextEditing()
             //cancelBarButton.hide()
-           // saveBarButton.hide()
+            // saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
         setUpMapView()
@@ -47,45 +54,45 @@ class NewFriendViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if friendLocation.documentID != "" {
+        if location.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: friendLocation.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
     func updateUserInterface() {
-        locationLabel.text = friendLocation.name
-        addressLabel.text = friendLocation.address
-        friendTextField.text =  friendLocation.firstName
+        nameTextField.text = location.name
+        addressTextField.text = location.address
+        myNameTextField.text =  location.firstName
         updateMap()
     }
     
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotation(friendLocation)
-        mapView.setCenter(friendLocation.coordinate, animated: true)
+        mapView.addAnnotation(location)
+        mapView.setCenter(location.coordinate, animated: true)
     }
     
     func disableTextEditing() {
-        friendTextField.isEnabled = false
-        //nameTextField.isEnabled = false
-       // addressTextField.isEnabled = false
-        friendTextField.backgroundColor = .clear
-        //nameTextField.backgroundColor = .clear
-       // addressTextField.backgroundColor = .clear
-        friendTextField.borderStyle = .none
-        //nameTextField.borderStyle = .none
-        //addressTextField.borderStyle = .none
+        //myNameTextField.isEnabled = false
+        nameTextField.isEnabled = false
+        addressTextField.isEnabled = false
+        //myNameTextField.backgroundColor = .clear
+        nameTextField.backgroundColor = .clear
+        addressTextField.backgroundColor = .clear
+        //myNameTextField.borderStyle = .none
+        nameTextField.borderStyle = .none
+        addressTextField.borderStyle = .none
     }
     
     func updateFromInterface() {
-        friendLocation.name = locationLabel.text!
-        friendLocation.address = addressLabel.text!
-        friendLocation.firstName = friendTextField.text!
+        location.name = nameTextField.text!
+        location.address = addressTextField.text!
+        location.firstName = myNameTextField.text!
     }
     
     func leaveViewController(){
@@ -97,7 +104,7 @@ class NewFriendViewController: UIViewController {
         }
     }
     
-    @IBAction func friendLookupButtonPressed(_ sender: UIButton) {
+    @IBAction func lookupButtonPressed(_ sender: UIButton) {
         updateFromInterface()
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
@@ -110,9 +117,10 @@ class NewFriendViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        self.updateUserInterface()
-        friendLocation.saveData() { success in
+        self.updateFromInterface()
+        location.saveData() { success in
             if success {
+                //self.leaveViewController()
                 self.performSegue(withIdentifier: "nextMeet", sender: nil)
             } else {
                 //ERROR during save occured
@@ -121,30 +129,7 @@ class NewFriendViewController: UIViewController {
         }
     }
 }
-
-extension NewFriendViewController: GMSAutocompleteViewControllerDelegate {
-
-  // Handle the user's selection.
-  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      friendLocation.name = place.name ?? "Unknown Place"
-      friendLocation.address = place.formattedAddress ?? "Unknown Address"
-      friendLocation.coordinate = place.coordinate
-    updateUserInterface()
-    dismiss(animated: true, completion: nil)
-  }
-
-  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-    // TODO: handle the error.
-    print("Error: ", error.localizedDescription)
-  }
-
-  // User canceled the operation.
-  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    dismiss(animated: true, completion: nil)
-  }
-}
-
-extension NewFriendViewController: CLLocationManagerDelegate {
+extension NewViewController: CLLocationManagerDelegate {
     
     func getLocation() {
         // Creating a CLLocationManager will automatically check authorization
@@ -211,19 +196,40 @@ extension NewFriendViewController: CLLocationManagerDelegate {
                 
             }
             // if there is no location data, make device location the location
-            if self.friendLocation.name == "" && self.friendLocation.address == "" {
-                self.friendLocation.name = name
-                self.friendLocation.address = address
-                self.friendLocation.coordinate = currentLocation.coordinate
+            if self.location.name == "" && self.location.address == "" {
+                self.location.name = name
+                self.location.address = address
+                self.location.coordinate = currentLocation.coordinate
             }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
             self.updateUserInterface()
         }
     }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("ERROR: \(error.localizedDescription). Failed to get device location.")
     }
 }
 
+extension NewViewController: GMSAutocompleteViewControllerDelegate {
 
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+    location.name = place.name ?? "Unknown Place"
+    location.address = place.formattedAddress ?? "Unknown Address"
+    location.coordinate = place.coordinate
+    updateUserInterface()
+    dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: ", error.localizedDescription)
+  }
+
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+}
