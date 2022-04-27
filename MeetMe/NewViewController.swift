@@ -10,6 +10,7 @@ import CoreLocation
 import GooglePlaces
 import MapKit
 import Contacts
+import QuartzCore
 
 class NewViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class NewViewController: UIViewController {
     @IBOutlet weak var lookupButton: UIButton!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var informationLabel: UILabel!
     
     var location: PersonalLocation!
     let regionDistance: CLLocationDegrees = 750.0
@@ -29,6 +31,7 @@ class NewViewController: UIViewController {
     
     override func viewDidLoad() {
         location = PersonalLocation()
+                
         super.viewDidLoad()
         
         //hide keyboard if we tap outside of a field
