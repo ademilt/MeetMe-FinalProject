@@ -226,6 +226,7 @@
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="IfZ-IY-D2H" id="hyv-jS-jAJ"/>
+                                <segue destination="YYs-ko-ZDy" kind="presentation" modalPresentationStyle="fullScreen" id="s24-gh-uFg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -238,7 +239,6 @@
                         <outlet property="myNameTextField" destination="9No-Cs-vUt" id="nOv-Eh-9Do"/>
                         <outlet property="nameTextField" destination="kPt-Gy-sPM" id="sW9-5R-Fgf"/>
                         <segue destination="lV4-cx-52C" kind="show" identifier="nextMeet" animates="NO" id="8ga-Vc-ptP"/>
-                        <segue destination="YYs-ko-ZDy" kind="presentation" id="m5p-X7-NEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXP-91-srT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,14 +278,6 @@
                                 <rect key="frame" x="20" y="337" width="374" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUR-U1-0e4">
-                                <rect key="frame" x="20" y="628" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaR-bU-djC">
                                 <rect key="frame" x="131" y="742" width="143" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -305,14 +297,6 @@
                                     <action selector="friendLookupButtonPressed:" destination="lV4-cx-52C" eventType="touchUpInside" id="K9s-6r-7qf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edp-cy-Rij">
-                                <rect key="frame" x="20" y="586" width="374" height="34.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-l0-kdP">
                                 <rect key="frame" x="197" y="192" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -320,6 +304,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ix-va-2Yg">
+                                <rect key="frame" x="20" y="578" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-gx-49w">
+                                <rect key="frame" x="20" y="628" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NY5-Sh-0Zq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -328,18 +326,25 @@
                     <navigationItem key="navigationItem" id="2JX-Jn-WXQ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aEV-Iq-xZb">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="lV4-cx-52C" id="R5W-Ob-Z6r"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="nuc-6P-hwM">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
+                                <action selector="saveButtonPressed:" destination="lV4-cx-52C" id="miU-fo-vvT"/>
                                 <segue destination="dMf-rc-Rzq" kind="presentation" identifier="findMidpoint" modalPresentationStyle="fullScreen" id="MDG-VT-gOC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addressLabel" destination="pO0-gx-49w" id="L2X-Hx-paD"/>
                         <outlet property="friendLookupButton" destination="VaR-bU-djC" id="lzR-1t-W8A"/>
                         <outlet property="friendTextField" destination="F7G-l0-kdP" id="ktJ-ZI-TsT"/>
+                        <outlet property="locationLabel" destination="9ix-va-2Yg" id="sUT-Vd-gGo"/>
+                        <outlet property="mapView" destination="Rnr-Bp-CUB" id="8aU-02-juB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEv-JP-uds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -817,7 +822,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Kg7-dy-ciH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Gj-8V-zUZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

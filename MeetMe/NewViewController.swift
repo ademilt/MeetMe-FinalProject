@@ -41,9 +41,11 @@ class NewViewController: UIViewController {
             location = PersonalLocation()
         } else {
             disableTextEditing()
-            cancelBarButton.hide()
+            //cancelBarButton.hide()
+            // saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
+        
         setUpMapView()
         updateUserInterface()
     }
@@ -75,13 +77,13 @@ class NewViewController: UIViewController {
     }
     
     func disableTextEditing() {
-        myNameTextField.isEnabled = false
+        //myNameTextField.isEnabled = false
         nameTextField.isEnabled = false
         addressTextField.isEnabled = false
-        myNameTextField.backgroundColor = .clear
+        //myNameTextField.backgroundColor = .clear
         nameTextField.backgroundColor = .clear
         addressTextField.backgroundColor = .clear
-        myNameTextField.borderStyle = .none
+        //myNameTextField.borderStyle = .none
         nameTextField.borderStyle = .none
         addressTextField.borderStyle = .none
     }
@@ -100,7 +102,6 @@ class NewViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
-    
     
     @IBAction func lookupButtonPressed(_ sender: UIButton) {
         updateFromInterface()

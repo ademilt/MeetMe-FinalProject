@@ -33,6 +33,7 @@
 		93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B4281844D600B858D3 /* UIViewController+Alert.swift */; };
 		93D055B92818474400B858D3 /* UIBarButtonItem+Hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */; };
 		93D055BB2818D69100B858D3 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055BA2818D69100B858D3 /* APIKeys.swift */; };
+		93D055BD2818E7A000B858D3 /* FriendLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055BC2818E7A000B858D3 /* FriendLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		93D055B4281844D600B858D3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Hide.swift"; sourceTree = "<group>"; };
 		93D055BA2818D69100B858D3 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		93D055BC2818E7A000B858D3 /* FriendLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLocation.swift; sourceTree = "<group>"; };
 		B2F5F4381ECDF4708E233B97 /* Pods-MeetMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.release.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.release.xcconfig"; sourceTree = "<group>"; };
 		B5D8D0AE25C093A2A65B0A34 /* Pods-MeetMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.debug.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,9 +114,10 @@
 			children = (
 				9338C48C28162D6E0088177D /* AppDelegate.swift */,
 				9338C48E28162D6E0088177D /* SceneDelegate.swift */,
+				93D055AE281836A800B858D3 /* Adventures.swift */,
 				93D055AA2818368900B858D3 /* PersonalLocation.swift */,
 				93D055AC2818369800B858D3 /* PersonalLocations.swift */,
-				93D055AE281836A800B858D3 /* Adventures.swift */,
+				93D055BC2818E7A000B858D3 /* FriendLocation.swift */,
 				93D055B028183A8700B858D3 /* Photo.swift */,
 				93D055B228183A8E00B858D3 /* Photos.swift */,
 				9338C49028162D6E0088177D /* LoginViewController.swift */,
@@ -298,6 +301,7 @@
 				93D055B128183A8700B858D3 /* Photo.swift in Sources */,
 				93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */,
 				93D055AF281836A800B858D3 /* Adventures.swift in Sources */,
+				93D055BD2818E7A000B858D3 /* FriendLocation.swift in Sources */,
 				93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */,
 				93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */,
 				93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */,
