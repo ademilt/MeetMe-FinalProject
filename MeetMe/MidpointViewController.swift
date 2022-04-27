@@ -10,7 +10,7 @@ import UIKit
 class MidpointViewController: UIViewController {
     
     @IBOutlet weak var midpointLabel: UILabel!
-   // var midpoint: Spot!
+   // var midpoint: PersonalLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class MidpointViewController: UIViewController {
     }
     
     
-    //function acquired from Stack Overflow: https://stackoverflow.com/questions/10559219/determining-midpoint-between-2-coordinates
+    //function adapted from Stack Overflow: https://stackoverflow.com/questions/10559219/determining-midpoint-between-2-coordinates
     
 //    func geographicMidpoint(betweenCoordinates coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D {
 //

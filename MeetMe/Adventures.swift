@@ -2,33 +2,27 @@
 //  Adventures.swift
 //  MeetMe
 //
-//  Created by Annie DeMilt on 4/25/22.
+//  Created by Annie DeMilt on 4/26/22.
 //
 
 import Foundation
-import Firebase
+import CoreLocation
 
-class Adventures{
-    var adventureArray: [Spot] = []
-    var db: Firestore!
+
+class Adventure {
+    var myLocation: PersonalLocation
+    var friendLocation: PersonalLocation
+    var notes: String
+    var postingUserID: String
+    var documentID: String
     
-    init(){
-        db = Firestore.firestore()
+    internal init(myLocation: PersonalLocation, friendLocation: PersonalLocation, notes: String, postingUserID: String, documentID: String) {
+        self.myLocation = myLocation
+        self.friendLocation = friendLocation
+        self.notes = notes
+        self.postingUserID = postingUserID
+        self.documentID = documentID
     }
     
-    func loadData(completed: @escaping () -> ()){
-        db.collection("spots").addSnapshotListener { (querySnapshot, error) in
-            guard error == nil else {
-                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
-                return completed()
-            }
-            self.adventureArray = []
-            for document in querySnapshot!.documents{
-                let spot = Spot(dictionary: document.data())
-                spot.documentID = document.documentID
-                self.adventureArray.append(spot)
-            }
-            completed()
-        }
-    }
 }
+

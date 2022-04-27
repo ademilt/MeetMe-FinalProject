@@ -17,8 +17,6 @@
 		9338C4A1281634C10088177D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9338C4A0281634C10088177D /* GoogleService-Info.plist */; };
 		9338C4A5281642500088177D /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A4281642500088177D /* SavedViewController.swift */; };
 		9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4AE281654FA0088177D /* OptionViewController.swift */; };
-		9338C4B52816EA150088177D /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B42816EA140088177D /* Spot.swift */; };
-		9338C4B72816EA3D0088177D /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4B62816EA3D0088177D /* Spots.swift */; };
 		93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */; };
 		93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3A2817169C004FCCF5 /* NewViewController.swift */; };
 		93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */; };
@@ -27,8 +25,14 @@
 		93A7AC4328171773004FCCF5 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC4228171773004FCCF5 /* ActivityViewController.swift */; };
 		93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC44281717B5004FCCF5 /* AdventureViewController.swift */; };
 		93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC46281717DD004FCCF5 /* HomeViewController.swift */; };
-		93A7AC4928171945004FCCF5 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC4828171944004FCCF5 /* Adventure.swift */; };
-		93A7AC4B28171951004FCCF5 /* Adventures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC4A28171951004FCCF5 /* Adventures.swift */; };
+		93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055AA2818368900B858D3 /* PersonalLocation.swift */; };
+		93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055AC2818369800B858D3 /* PersonalLocations.swift */; };
+		93D055AF281836A800B858D3 /* Adventures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055AE281836A800B858D3 /* Adventures.swift */; };
+		93D055B128183A8700B858D3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B028183A8700B858D3 /* Photo.swift */; };
+		93D055B328183A8E00B858D3 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B228183A8E00B858D3 /* Photos.swift */; };
+		93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B4281844D600B858D3 /* UIViewController+Alert.swift */; };
+		93D055B92818474400B858D3 /* UIBarButtonItem+Hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */; };
+		93D055BB2818D69100B858D3 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055BA2818D69100B858D3 /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +48,6 @@
 		9338C4A0281634C10088177D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9338C4A4281642500088177D /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		9338C4AE281654FA0088177D /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
-		9338C4B42816EA140088177D /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
-		9338C4B62816EA3D0088177D /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		93A7AC3A2817169C004FCCF5 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +56,14 @@
 		93A7AC4228171773004FCCF5 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		93A7AC44281717B5004FCCF5 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		93A7AC46281717DD004FCCF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		93A7AC4828171944004FCCF5 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
-		93A7AC4A28171951004FCCF5 /* Adventures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventures.swift; sourceTree = "<group>"; };
+		93D055AA2818368900B858D3 /* PersonalLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLocation.swift; sourceTree = "<group>"; };
+		93D055AC2818369800B858D3 /* PersonalLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLocations.swift; sourceTree = "<group>"; };
+		93D055AE281836A800B858D3 /* Adventures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventures.swift; sourceTree = "<group>"; };
+		93D055B028183A8700B858D3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		93D055B228183A8E00B858D3 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		93D055B4281844D600B858D3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Hide.swift"; sourceTree = "<group>"; };
+		93D055BA2818D69100B858D3 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		B2F5F4381ECDF4708E233B97 /* Pods-MeetMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.release.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.release.xcconfig"; sourceTree = "<group>"; };
 		B5D8D0AE25C093A2A65B0A34 /* Pods-MeetMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetMe.debug.xcconfig"; path = "Target Support Files/Pods-MeetMe/Pods-MeetMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,10 +112,11 @@
 			children = (
 				9338C48C28162D6E0088177D /* AppDelegate.swift */,
 				9338C48E28162D6E0088177D /* SceneDelegate.swift */,
-				9338C4B42816EA140088177D /* Spot.swift */,
-				9338C4B62816EA3D0088177D /* Spots.swift */,
-				93A7AC4828171944004FCCF5 /* Adventure.swift */,
-				93A7AC4A28171951004FCCF5 /* Adventures.swift */,
+				93D055AA2818368900B858D3 /* PersonalLocation.swift */,
+				93D055AC2818369800B858D3 /* PersonalLocations.swift */,
+				93D055AE281836A800B858D3 /* Adventures.swift */,
+				93D055B028183A8700B858D3 /* Photo.swift */,
+				93D055B228183A8E00B858D3 /* Photos.swift */,
 				9338C49028162D6E0088177D /* LoginViewController.swift */,
 				93A7AC46281717DD004FCCF5 /* HomeViewController.swift */,
 				9338C4A4281642500088177D /* SavedViewController.swift */,
@@ -119,6 +128,9 @@
 				93A7AC4228171773004FCCF5 /* ActivityViewController.swift */,
 				9338C4AE281654FA0088177D /* OptionViewController.swift */,
 				93A7AC44281717B5004FCCF5 /* AdventureViewController.swift */,
+				93D055B4281844D600B858D3 /* UIViewController+Alert.swift */,
+				93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */,
+				93D055BA2818D69100B858D3 /* APIKeys.swift */,
 				9338C49228162D6E0088177D /* Main.storyboard */,
 				9338C49528162D700088177D /* Assets.xcassets */,
 				9338C49728162D700088177D /* LaunchScreen.storyboard */,
@@ -270,22 +282,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D055B328183A8E00B858D3 /* Photos.swift in Sources */,
 				9338C49128162D6E0088177D /* LoginViewController.swift in Sources */,
-				9338C4B72816EA3D0088177D /* Spots.swift in Sources */,
 				9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */,
 				93A7AC4328171773004FCCF5 /* ActivityViewController.swift in Sources */,
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
 				93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
 				93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */,
-				93A7AC4928171945004FCCF5 /* Adventure.swift in Sources */,
+				93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */,
+				93D055BB2818D69100B858D3 /* APIKeys.swift in Sources */,
+				93D055B92818474400B858D3 /* UIBarButtonItem+Hide.swift in Sources */,
 				93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */,
 				93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */,
-				93A7AC4B28171951004FCCF5 /* Adventures.swift in Sources */,
+				93D055B128183A8700B858D3 /* Photo.swift in Sources */,
 				93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */,
+				93D055AF281836A800B858D3 /* Adventures.swift in Sources */,
 				93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */,
+				93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */,
+				93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */,
 				9338C4A5281642500088177D /* SavedViewController.swift in Sources */,
-				9338C4B52816EA150088177D /* Spot.swift in Sources */,
 				93A7AC3F2817171A004FCCF5 /* SavedDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
