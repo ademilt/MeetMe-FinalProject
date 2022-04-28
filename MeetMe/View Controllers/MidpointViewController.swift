@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
+import GooglePlaces
+import MapKit
+import Contacts
+
 
 class MidpointViewController: UIViewController {
     
@@ -15,6 +20,7 @@ class MidpointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //call geographicMidpoint function
+        //returns a coordinate
         //midpointLabel.text = midpoint.name
     }
     
