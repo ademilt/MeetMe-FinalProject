@@ -133,11 +133,6 @@ class NewViewController: UIViewController {
     }
     
     
-//    @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
-//        self.updateFromInterface()
-//        self.performSegue(withIdentifier: "nextMeet", sender: nil)
-//    }
-    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         self.updateFromInterface()
         adventure.saveData() { success in

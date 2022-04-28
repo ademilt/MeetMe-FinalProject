@@ -15,7 +15,16 @@ import Contacts
 class MidpointViewController: UIViewController {
     
     @IBOutlet weak var midpointLabel: UILabel!
-   // var midpoint: PersonalLocation!
+   // var midpoint: MidpointLocation!
+    //create new midpoint location class that holds address + location name of midpoint coordinates
+    //need to create variables that store myInfo and friendInfo, to be accessed
+    //var me: PersonalLocation!
+    //var friend: FriendLocation!
+    //var meCoordinate: PersonalLocation!
+    //var friendCoordinate: FriendLocation!
+    //friend coordinates --> friend.coordinate
+    //me coordinates --> me.coordinate
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
