@@ -338,11 +338,11 @@
                                 <action selector="cancelButtonPressed:" destination="lV4-cx-52C" id="R5W-Ob-Z6r"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nuc-6P-hwM">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="nuc-6P-hwM">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="saveButtonPressed:" destination="lV4-cx-52C" id="miU-fo-vvT"/>
-                                <segue destination="3gN-Ub-vi9" kind="presentation" identifier="findMidpoint" modalPresentationStyle="fullScreen" id="K5x-YL-LUK"/>
+                                <action selector="saveButtonPressed:" destination="lV4-cx-52C" id="zWX-kC-V5G"/>
+                                <segue destination="3gN-Ub-vi9" kind="show" identifier="findMidpoint" animates="NO" id="bSX-GM-OKj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -911,7 +911,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lot-bS-7R8"/>
-        <segue reference="K5x-YL-LUK"/>
+        <segue reference="bSX-GM-OKj"/>
         <segue reference="8ga-Vc-ptP"/>
         <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>

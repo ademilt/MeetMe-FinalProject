@@ -24,7 +24,7 @@ class NewFriendViewController: UIViewController {
     
     var adventure: FriendLocation!
     //var currentUser: AdventureUser!
-    var person: PersonalLocation!
+    //var person: PersonalLocation!
     
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
@@ -44,7 +44,7 @@ class NewFriendViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        //getLocation()
+        getLocation()
         if adventure == nil {
             adventure = FriendLocation()
         } else {
@@ -53,7 +53,7 @@ class NewFriendViewController: UIViewController {
             // saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
-        //setUpMapView()
+        setUpMapView()
         updateUserInterface()
     }
     
@@ -129,8 +129,8 @@ class NewFriendViewController: UIViewController {
 //    }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        self.updateFromInterface()
-        adventure.saveData(person: person) { success in
+        updateFromInterface()
+        adventure.saveData() { success in
             if success {
                 //self.leaveViewController()
                 self.performSegue(withIdentifier: "findMidpoint", sender: nil)

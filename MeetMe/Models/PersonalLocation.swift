@@ -35,14 +35,6 @@ class PersonalLocation: NSObject, MKAnnotation {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
-    var title: String? {
-        return name
-    }
-    
-    var subtitle: String? {
-        return address
-    }
-    
     init(firstName: String, name: String, address: String, coordinate: CLLocationCoordinate2D, postingUserID: String, documentID: String) {
         self.firstName = firstName
         self.name = name
