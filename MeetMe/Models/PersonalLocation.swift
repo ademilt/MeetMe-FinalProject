@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 import MapKit
+import FirebaseAuth
+import FirebaseAuthUI
 
 class PersonalLocation: NSObject, MKAnnotation {
     var firstName: String
@@ -62,7 +64,7 @@ class PersonalLocation: NSObject, MKAnnotation {
         let longitude = dictionary["longitude"] as! Double? ?? 0.0
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-            self.init(firstName: name, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
+            self.init(firstName: firstName, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
     }
     
     func saveData(completion: @escaping (Bool) -> ()) {
@@ -78,7 +80,7 @@ class PersonalLocation: NSObject, MKAnnotation {
         // if we HAVE saved a record, we'll have an ID, otherwise .addDocument will create one
         if self.documentID == "" {
             var ref: DocumentReference? = nil // Firestore will create a new ID for us
-            ref = db.collection("locations").addDocument(data: dataToSave){ error in
+            ref = db.collection("users").document(postingUserID).collection("adventures").addDocument(data: dataToSave){ error in
                 guard error == nil else {
                     print("😡 ERROR: Adding document \(error!.localizedDescription).")
                     return completion(false)
@@ -88,7 +90,7 @@ class PersonalLocation: NSObject, MKAnnotation {
                 completion(true)
             }
         } else { // else save to the existing document id with .setData
-            let ref = db.collection("locations").document(self.documentID)
+            let ref = db.collection("users").document(postingUserID).collection("adventures").document(self.documentID)
             ref.setData(dataToSave) { error in
                 guard error == nil else {
                     print("😡 ERROR: Updating document \(error!.localizedDescription).")
@@ -98,5 +100,7 @@ class PersonalLocation: NSObject, MKAnnotation {
                 completion(true)
             }
         }
+        
     }
+
 }

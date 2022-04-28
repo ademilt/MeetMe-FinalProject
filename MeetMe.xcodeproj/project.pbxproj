@@ -19,6 +19,8 @@
 		9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4AE281654FA0088177D /* OptionViewController.swift */; };
 		93A5AB84281902AA0017AECE /* FriendLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB83281902AA0017AECE /* FriendLocations.swift */; };
 		93A5AB86281902BF0017AECE /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB85281902BF0017AECE /* Adventure.swift */; };
+		93A5AB8E2819E5230017AECE /* AdventureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB8D2819E5230017AECE /* AdventureUser.swift */; };
+		93A5AB902819F10F0017AECE /* AdventureUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB8F2819F10F0017AECE /* AdventureUsers.swift */; };
 		93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */; };
 		93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3A2817169C004FCCF5 /* NewViewController.swift */; };
 		93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */; };
@@ -53,6 +55,8 @@
 		9338C4AE281654FA0088177D /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		93A5AB83281902AA0017AECE /* FriendLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLocations.swift; sourceTree = "<group>"; };
 		93A5AB85281902BF0017AECE /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
+		93A5AB8D2819E5230017AECE /* AdventureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureUser.swift; sourceTree = "<group>"; };
+		93A5AB8F2819F10F0017AECE /* AdventureUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureUsers.swift; sourceTree = "<group>"; };
 		93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		93A7AC3A2817169C004FCCF5 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 			children = (
 				93A5AB85281902BF0017AECE /* Adventure.swift */,
 				93D055AE281836A800B858D3 /* Adventures.swift */,
+				93A5AB8D2819E5230017AECE /* AdventureUser.swift */,
+				93A5AB8F2819F10F0017AECE /* AdventureUsers.swift */,
 				93D055AA2818368900B858D3 /* PersonalLocation.swift */,
 				93D055AC2818369800B858D3 /* PersonalLocations.swift */,
 				93D055BC2818E7A000B858D3 /* FriendLocation.swift */,
@@ -338,10 +344,12 @@
 				93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */,
 				93D055B128183A8700B858D3 /* Photo.swift in Sources */,
 				93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */,
+				93A5AB902819F10F0017AECE /* AdventureUsers.swift in Sources */,
 				93D055AF281836A800B858D3 /* Adventures.swift in Sources */,
 				93A5AB86281902BF0017AECE /* Adventure.swift in Sources */,
 				93D055BD2818E7A000B858D3 /* FriendLocation.swift in Sources */,
 				93A5AB84281902AA0017AECE /* FriendLocations.swift in Sources */,
+				93A5AB8E2819E5230017AECE /* AdventureUser.swift in Sources */,
 				93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */,
 				93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */,
 				93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */,

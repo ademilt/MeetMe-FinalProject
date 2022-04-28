@@ -10,6 +10,8 @@ import CoreLocation
 import GooglePlaces
 import MapKit
 import Contacts
+import FirebaseAuth
+import FirebaseAuthUI
 
 class NewFriendViewController: UIViewController {
    
@@ -20,16 +22,22 @@ class NewFriendViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     
     
-    var friendLocation: FriendLocation!
+    var adventure: FriendLocation!
+    //var currentUser: AdventureUser!
+    var person: PersonalLocation!
+    
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     //var myName: String!
     
     override func viewDidLoad() {
-        friendLocation = FriendLocation()
-                
+        //adventure = AdventureUser(user: adventure)
+        //adventure = Adventure()
         super.viewDidLoad()
+        
+        adventure = FriendLocation()
+        //currentUser = currentUser.documentID
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -37,49 +45,60 @@ class NewFriendViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         //getLocation()
-        if friendLocation == nil {
-            friendLocation = FriendLocation()
+        if adventure == nil {
+            adventure = FriendLocation()
         } else {
-            //disableTextEditing()
+            disableTextEditing()
             //cancelBarButton.hide()
             // saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
-        setUpMapView()
+        //setUpMapView()
         updateUserInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if friendLocation.documentID != "" {
+        if adventure.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: friendLocation.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: adventure.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
     func updateUserInterface() {
-        locationLabel.text = friendLocation.name
-        addressLabel.text = friendLocation.address
-        friendTextField.text =  friendLocation.friendName
+        locationLabel.text = adventure.name
+        addressLabel.text = adventure.address
+        friendTextField.text =  adventure.friendName
         updateMap()
     }
     
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotation(friendLocation)
-        mapView.setCenter(friendLocation.coordinate, animated: true)
+        mapView.addAnnotation(adventure)
+        mapView.setCenter(adventure.coordinate, animated: true)
     }
     
+    func disableTextEditing() {
+        //mylocationLabel.isEnabled = false
+        locationLabel.isEnabled = false
+        addressLabel.isEnabled = false
+        //mylocationLabel.backgroundColor = .clear
+        locationLabel.backgroundColor = .clear
+        addressLabel.backgroundColor = .clear
+        //mylocationLabel.borderStyle = .none
+       // locationLabel.borderStyle = .none
+       // addressLabel.borderStyle = .none
+    }
     
     func updateFromInterface() {
-        friendLocation.name = locationLabel.text!
-        friendLocation.address = addressLabel.text!
-        friendLocation.friendName = friendTextField.text!
+        adventure.name = locationLabel.text!
+        adventure.address = addressLabel.text!
+        adventure.friendName = friendTextField.text!
     }
     
     func leaveViewController(){
@@ -103,12 +122,18 @@ class NewFriendViewController: UIViewController {
         leaveViewController()
     }
     
+    
+//    @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
+//        self.updateFromInterface()
+//        self.performSegue(withIdentifier: "nextMeet", sender: nil)
+//    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         self.updateFromInterface()
-        friendLocation.saveData(location: friendLocation) { success in
+        adventure.saveData(person: person) { success in
             if success {
                 //self.leaveViewController()
-                self.performSegue(withIdentifier: "nextMeet", sender: nil)
+                self.performSegue(withIdentifier: "findMidpoint", sender: nil)
             } else {
                 //ERROR during save occured
                 self.oneButtonAlert(title: "Save Failed", message: "For some reason the data would not save to the cloud")
@@ -183,10 +208,10 @@ extension NewFriendViewController: CLLocationManagerDelegate {
                 
             }
             // if there is no location data, make device location the location
-            if self.friendLocation.name == "" && self.friendLocation.address == "" {
-                self.friendLocation.name = name
-                self.friendLocation.address = address
-                self.friendLocation.coordinate = currentLocation.coordinate
+            if self.adventure.name == "" && self.adventure.address == "" {
+                self.adventure.name = name
+                self.adventure.address = address
+                self.adventure.coordinate = currentLocation.coordinate
             }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
@@ -203,9 +228,9 @@ extension NewFriendViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      friendLocation.name = place.name ?? "Unknown Place"
-      friendLocation.address = place.formattedAddress ?? "Unknown Address"
-      friendLocation.coordinate = place.coordinate
+      adventure.name = place.name ?? "Unknown Place"
+      adventure.address = place.formattedAddress ?? "Unknown Address"
+      adventure.coordinate = place.coordinate
     updateUserInterface()
     dismiss(animated: true, completion: nil)
   }

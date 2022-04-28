@@ -114,7 +114,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="UKv-bJ-DwZ">
                             <color key="tintColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="u1e-q4-MnB" kind="unwind" identifier="SignOutUnwind" animates="NO" unwindAction="unwindSignOutPressedWithSegue:" id="oU5-M0-c41"/>
+                                <segue destination="u1e-q4-MnB" kind="unwind" identifier="SignOutUnwind" unwindAction="unwindSignOutPressedWithSegue:" id="gbp-pc-XLa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,10 +226,10 @@
                                 <action selector="cancelButtonPressed:" destination="IfZ-IY-D2H" id="0RJ-ON-tj7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="53R-be-ayj">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="53R-be-ayj">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="saveButtonPressed:" destination="IfZ-IY-D2H" id="hyv-jS-jAJ"/>
+                                <action selector="saveButtonPressed:" destination="IfZ-IY-D2H" id="kml-ea-rhz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -242,6 +242,7 @@
                         <outlet property="mapView" destination="esL-6K-gba" id="SAu-AN-Oug"/>
                         <outlet property="myNameTextField" destination="9No-Cs-vUt" id="nOv-Eh-9Do"/>
                         <outlet property="nameTextField" destination="kPt-Gy-sPM" id="sW9-5R-Fgf"/>
+                        <outlet property="nextBarButton" destination="53R-be-ayj" id="8br-Qm-M7q"/>
                         <segue destination="lV4-cx-52C" kind="show" identifier="nextMeet" animates="NO" id="8ga-Vc-ptP"/>
                     </connections>
                 </viewController>
@@ -341,7 +342,7 @@
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="lV4-cx-52C" id="miU-fo-vvT"/>
-                                <segue destination="dMf-rc-Rzq" kind="presentation" identifier="findMidpoint" modalPresentationStyle="fullScreen" id="MDG-VT-gOC"/>
+                                <segue destination="3gN-Ub-vi9" kind="presentation" identifier="findMidpoint" modalPresentationStyle="fullScreen" id="K5x-YL-LUK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -910,6 +911,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lot-bS-7R8"/>
+        <segue reference="K5x-YL-LUK"/>
         <segue reference="8ga-Vc-ptP"/>
         <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>

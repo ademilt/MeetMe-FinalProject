@@ -11,27 +11,43 @@ import GooglePlaces
 import MapKit
 import Contacts
 import QuartzCore
+import FirebaseAuth
+import FirebaseAuthUI
 
 class NewViewController: UIViewController {
     
     @IBOutlet weak var myNameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    // change to label
     @IBOutlet weak var addressTextField: UITextField!
+    //change to label
     @IBOutlet weak var lookupButton: UIButton!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var informationLabel: UILabel!
     
-    var location: PersonalLocation!
+    //var adventure = Auth.auth().adventure?.uid
+    // using documentID to access data
+    //var currentUser: AdventureUser!
+    //var userID = Auth.auth().currentUser!.uid
+    
+    //document or snapshot listener variable
+    var adventure: PersonalLocation!
+    var currentUser: AdventureUser!
+    
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     //var myName: String!
     
     override func viewDidLoad() {
-        location = PersonalLocation()
-                
+        //adventure = AdventureUser(user: adventure)
+        //adventure = Adventure()
         super.viewDidLoad()
+        
+        adventure = PersonalLocation()
+        //currentUser = currentUser.documentID
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -39,8 +55,8 @@ class NewViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         getLocation()
-        if location == nil {
-            location = PersonalLocation()
+        if adventure == nil {
+            adventure = PersonalLocation()
         } else {
             disableTextEditing()
             //cancelBarButton.hide()
@@ -54,27 +70,27 @@ class NewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if location.documentID != "" {
+        if adventure.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: adventure.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
     func updateUserInterface() {
-        nameTextField.text = location.name
-        addressTextField.text = location.address
-        myNameTextField.text =  location.firstName
+        nameTextField.text = adventure.name
+        addressTextField.text = adventure.address
+        myNameTextField.text =  adventure.firstName
         updateMap()
     }
     
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotation(location)
-        mapView.setCenter(location.coordinate, animated: true)
+        mapView.addAnnotation(adventure)
+        mapView.setCenter(adventure.coordinate, animated: true)
     }
     
     func disableTextEditing() {
@@ -90,9 +106,9 @@ class NewViewController: UIViewController {
     }
     
     func updateFromInterface() {
-        location.name = nameTextField.text!
-        location.address = addressTextField.text!
-        location.firstName = myNameTextField.text!
+        adventure.name = nameTextField.text!
+        adventure.address = addressTextField.text!
+        adventure.firstName = myNameTextField.text!
     }
     
     func leaveViewController(){
@@ -116,9 +132,15 @@ class NewViewController: UIViewController {
         leaveViewController()
     }
     
+    
+//    @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
+//        self.updateFromInterface()
+//        self.performSegue(withIdentifier: "nextMeet", sender: nil)
+//    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         self.updateFromInterface()
-        location.saveData() { success in
+        adventure.saveData() { success in
             if success {
                 //self.leaveViewController()
                 self.performSegue(withIdentifier: "nextMeet", sender: nil)
@@ -196,10 +218,10 @@ extension NewViewController: CLLocationManagerDelegate {
                 
             }
             // if there is no location data, make device location the location
-            if self.location.name == "" && self.location.address == "" {
-                self.location.name = name
-                self.location.address = address
-                self.location.coordinate = currentLocation.coordinate
+            if self.adventure.name == "" && self.adventure.address == "" {
+                self.adventure.name = name
+                self.adventure.address = address
+                self.adventure.coordinate = currentLocation.coordinate
             }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
@@ -216,9 +238,9 @@ extension NewViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    location.name = place.name ?? "Unknown Place"
-    location.address = place.formattedAddress ?? "Unknown Address"
-    location.coordinate = place.coordinate
+      adventure.name = place.name ?? "Unknown Place"
+      adventure.address = place.formattedAddress ?? "Unknown Address"
+      adventure.coordinate = place.coordinate
     updateUserInterface()
     dismiss(animated: true, completion: nil)
   }

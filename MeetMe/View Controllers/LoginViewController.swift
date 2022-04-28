@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 
-class LoginViewController: UIViewController, FUIAuthDelegate {
+class LoginViewController: UIViewController {
     
     var authUI: FUIAuth!
 
@@ -38,7 +38,19 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             loginViewController.modalPresentationStyle = .fullScreen
             present(loginViewController, animated: true, completion: nil)
         } else { // user is already logged in
-            performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+            guard let currentUser = authUI.auth?.currentUser else {
+                print("ERROR: Couldn't get current user.")
+                return
+            }
+            let adventureUser = AdventureUser(user: currentUser)
+            adventureUser.saveIfNewUser { success in
+                if success {
+                    self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+                } else {
+                    print("ERROR: Tried to save a new SnackUser, but failed")
+                }
+            }
+           
         }
     }
     
@@ -56,7 +68,9 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             signOut()
         }
     }
+}
 
+extension LoginViewController: FUIAuthDelegate {
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
         let marginInsets: CGFloat = 16.0 // amount to indent UIImageView on each side
         let topSafeArea = self.view.safeAreaInsets.top
@@ -84,5 +98,5 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         logoImageView.contentMode = .scaleAspectFit // Set imageView to Aspect Fit
         loginViewController.view.addSubview(logoImageView) // Add ImageView to the login controller's main view
         return loginViewController
-}
+    }
 }
