@@ -24,7 +24,6 @@
 		93A5AB96281AD0690017AECE /* MidpointLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB95281AD0690017AECE /* MidpointLocations.swift */; };
 		93A5AB9E281C73D70017AECE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB9D281C73D60017AECE /* SearchViewController.swift */; };
 		93A5ABA6281C769E0017AECE /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */; };
-		93A5ABA9281C94730017AECE /* CoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA8281C94730017AECE /* CoffeeViewController.swift */; };
 		93A5ABAB281C948C0017AECE /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */; };
 		93A5ABAD281C94A00017AECE /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABAC281C94A00017AECE /* ParkViewController.swift */; };
 		93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */; };
@@ -64,7 +63,6 @@
 		93A5AB95281AD0690017AECE /* MidpointLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointLocations.swift; sourceTree = "<group>"; };
 		93A5AB9D281C73D60017AECE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
-		93A5ABA8281C94730017AECE /* CoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewController.swift; sourceTree = "<group>"; };
 		93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		93A5ABAC281C94A00017AECE /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
 		93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				93A5AB9D281C73D60017AECE /* SearchViewController.swift */,
-				93A5ABA8281C94730017AECE /* CoffeeViewController.swift */,
 				93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */,
 				93A5ABAC281C94A00017AECE /* ParkViewController.swift */,
 			);
@@ -358,7 +355,6 @@
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
 				93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
-				93A5ABA9281C94730017AECE /* CoffeeViewController.swift in Sources */,
 				93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */,
 				93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */,
 				93A5AB96281AD0690017AECE /* MidpointLocations.swift in Sources */,
