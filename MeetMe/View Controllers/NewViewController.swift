@@ -17,26 +17,19 @@ import FirebaseAuthUI
 class NewViewController: UIViewController {
     
     @IBOutlet weak var myNameTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    // change to label
-    @IBOutlet weak var addressTextField: UITextField!
-    //change to label
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var lookupButton: UIButton!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var informationLabel: UILabel!
     
-    //var adventure = Auth.auth().adventure?.uid
-    // using documentID to access data
-    //var currentUser: AdventureUser!
-    //var userID = Auth.auth().currentUser!.uid
-    
     //document or snapshot listener variable
     var adventure: PersonalLocation!
     var currentUser: AdventureUser!
     
-    let regionDistance: CLLocationDegrees = 750.0
+    let regionDistance: CLLocationDegrees = 1000
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     
@@ -54,7 +47,6 @@ class NewViewController: UIViewController {
         if adventure == nil {
             adventure = PersonalLocation()
         } else {
-            disableTextEditing()
             navigationController?.setToolbarHidden(true, animated: true)
         }
         setUpMapView()
@@ -75,8 +67,8 @@ class NewViewController: UIViewController {
     }
     
     func updateUserInterface() {
-        nameTextField.text = adventure.name
-        addressTextField.text = adventure.address
+        locationLabel.text = adventure.name
+        addressLabel.text = adventure.address
         myNameTextField.text =  adventure.firstName
         updateMap()
     }
@@ -87,18 +79,9 @@ class NewViewController: UIViewController {
         mapView.setCenter(adventure.coordinate, animated: true)
     }
     
-    func disableTextEditing() {
-        nameTextField.isEnabled = false
-        addressTextField.isEnabled = false
-        nameTextField.backgroundColor = .clear
-        addressTextField.backgroundColor = .clear
-        nameTextField.borderStyle = .none
-        addressTextField.borderStyle = .none
-    }
-    
     func updateFromInterface() {
-        adventure.name = nameTextField.text!
-        adventure.address = addressTextField.text!
+        adventure.name = locationLabel.text!
+        adventure.address = addressLabel.text!
         adventure.firstName = myNameTextField.text!
     }
     

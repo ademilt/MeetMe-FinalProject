@@ -10,8 +10,6 @@ import CoreLocation
 import GooglePlaces
 import MapKit
 import Contacts
-import FirebaseAuth
-import FirebaseAuthUI
 
 class NewFriendViewController: UIViewController {
     
@@ -24,7 +22,6 @@ class NewFriendViewController: UIViewController {
     
     var friendAdventure: FriendLocation!
     var person: PersonalLocation!
-    
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
@@ -33,7 +30,6 @@ class NewFriendViewController: UIViewController {
         super.viewDidLoad()
         
         friendAdventure = FriendLocation()
-        
         guard person != nil else {
             print("No person passed through.")
             return
@@ -45,14 +41,9 @@ class NewFriendViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        //getLocation()
+        getLocation()
         if friendAdventure == nil {
             friendAdventure = FriendLocation()
-        } else {
-            disableTextEditing()
-            //cancelBarButton.hide()
-            // saveBarButton.hide()
-            navigationController?.setToolbarHidden(true, animated: true)
         }
         setUpMapView()
         updateUserInterface()
@@ -67,7 +58,7 @@ class NewFriendViewController: UIViewController {
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: friendAdventure.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: friendAdventure.coordinate, latitudinalMeters: regionDistance , longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
@@ -76,25 +67,27 @@ class NewFriendViewController: UIViewController {
         addressLabel.text = friendAdventure.address
         friendTextField.text =  friendAdventure.friendName
         updateMap()
+        setupAnnotations()
     }
     
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(friendAdventure)
-        mapView.setCenter(friendAdventure.coordinate, animated: true)
+        //mapView.setCenter(friendAdventure.coordinate, animated: true)
     }
     
-    func disableTextEditing() {
-        //mylocationLabel.isEnabled = false
-        locationLabel.isEnabled = false
-        addressLabel.isEnabled = false
-        //mylocationLabel.backgroundColor = .clear
-        locationLabel.backgroundColor = .clear
-        addressLabel.backgroundColor = .clear
-        //mylocationLabel.borderStyle = .none
-        // locationLabel.borderStyle = .none
-        // addressLabel.borderStyle = .none
+    //function to keep map annotation from previous view controller, adapted from Stack Overflow https://stackoverflow.com/questions/62179614/passing-data-from-a-map-annotation-to-a-new-view-controller
+    func setupAnnotations() {
+        let places = person.map { placeOnMap -> MKPointAnnotation in
+            let place = MKPointAnnotation()
+            place.coordinate =  CLLocationCoordinate2D(latitude: placeOnMap.latitude, longitude: placeOnMap.longitude)
+            place.title = placeOnMap.firstName
+            return place
+        }
+        mapView.addAnnotation(places!)
+        mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
+    
     
     func updateFromInterface() {
         friendAdventure.name = locationLabel.text!
@@ -133,7 +126,7 @@ class NewFriendViewController: UIViewController {
     }
     
     @IBAction func saveTryButtonPressed(_ sender: UIBarButtonItem) {
-        print("**** We clicked it!")
+        //print("**** We clicked it!")
         updateFromInterface()
         friendAdventure.saveData(person: person) { success in
             if success {
@@ -191,9 +184,8 @@ extension NewFriendViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let currentLocation = locations.last ?? CLLocation()
-        print("🗺 Current location is \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)")
+        let currentLocation: CLLocation =  CLLocation(latitude: friendAdventure.latitude, longitude: friendAdventure.longitude)
+
         var name = ""
         var address = ""
         let geocoder = CLGeocoder()
@@ -214,11 +206,11 @@ extension NewFriendViewController: CLLocationManagerDelegate {
                 
             }
             // if there is no location data, make device location the location
-            if self.friendAdventure.name == "" && self.friendAdventure.address == "" {
-                self.friendAdventure.name = name
-                self.friendAdventure.address = address
-                self.friendAdventure.coordinate = currentLocation.coordinate
-            }
+//            if self.friendAdventure.name == "" && self.friendAdventure.address == "" {
+//                self.friendAdventure.name = name
+//                self.friendAdventure.address = address
+//                self.friendAdventure.coordinate = currentLocation.coordinate
+//            }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
             self.updateUserInterface()
