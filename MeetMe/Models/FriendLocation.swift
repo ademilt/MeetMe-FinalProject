@@ -59,8 +59,7 @@ class FriendLocation: NSObject, MKAnnotation {
             self.init(friendName: friendName, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
     }
     
-//    func saveData(person: PersonalLocation, completion: @escaping (Bool) -> ()) {
-    func saveData(completion: @escaping (Bool) -> ()) {
+    func saveData(person: PersonalLocation, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         // Grab the user id
         guard let postingUserID = Auth.auth().currentUser?.uid else {
@@ -73,26 +72,24 @@ class FriendLocation: NSObject, MKAnnotation {
         // if we HAVE saved a record, we'll have an ID, otherwise .addDocument will create one
         if self.documentID == "" {
             var ref: DocumentReference? = nil // Firestore will create a new ID for us
-            ref = db.collection("adventures").document(postingUserID).collection("friend").addDocument(data: dataToSave) { error in
+            ref = db.collection("users").document(postingUserID).collection("adventures").document(person.documentID).collection("friend").addDocument(data: dataToSave){ error in
                 guard error == nil else {
                     print("😡 ERROR: Adding document \(error!.localizedDescription).")
                     return completion(false)
                 }
                 self.documentID = ref!.documentID
-                print("😀 Added document \(self.documentID) to spot: \(postingUserID). It worked!")
-                     completion(true)
-                
+                print("😀 Added document \(self.documentID) to the cloud. It worked!")
+                completion(true)
             }
         } else { // else save to the existing document id with .setData
-            let ref = db.collection("adventures").document(postingUserID).collection("friend").document(self.documentID)
+            let ref = db.collection("users").document(postingUserID).collection("adventures").document(person.documentID).collection("friend").document(self.documentID)
             ref.setData(dataToSave) { error in
                 guard error == nil else {
                     print("😡 ERROR: Updating document \(error!.localizedDescription).")
                     return completion(false)
                 }
-                print("😀 Updated document \(self.documentID) in spot: \(postingUserID). It worked!")
-                     completion(true)
-                
+                print("😀 Updated document \(self.documentID) to the cloud. It worked!")
+                completion(true)
             }
         }
         

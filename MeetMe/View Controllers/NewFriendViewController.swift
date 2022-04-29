@@ -14,7 +14,7 @@ import FirebaseAuth
 import FirebaseAuthUI
 
 class NewFriendViewController: UIViewController {
-   
+    
     @IBOutlet weak var friendTextField: UITextField!
     @IBOutlet weak var friendLookupButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
@@ -22,31 +22,32 @@ class NewFriendViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     
     
-    var adventure: FriendLocation!
-    //var currentUser: AdventureUser!
-    //var person: PersonalLocation!
+    var friendAdventure: FriendLocation!
+    var person: PersonalLocation!
     
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
-    //var myName: String!
     
     override func viewDidLoad() {
-        //adventure = AdventureUser(user: adventure)
-        //adventure = Adventure()
         super.viewDidLoad()
         
-        adventure = FriendLocation()
-        //currentUser = currentUser.documentID
+        friendAdventure = FriendLocation()
+        
+        guard person != nil else {
+            print("No person passed through.")
+            return
+        }
+        
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        getLocation()
-        if adventure == nil {
-            adventure = FriendLocation()
+        //getLocation()
+        if friendAdventure == nil {
+            friendAdventure = FriendLocation()
         } else {
             disableTextEditing()
             //cancelBarButton.hide()
@@ -60,27 +61,27 @@ class NewFriendViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if adventure.documentID != "" {
+        if friendAdventure.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: adventure.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: friendAdventure.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
     func updateUserInterface() {
-        locationLabel.text = adventure.name
-        addressLabel.text = adventure.address
-        friendTextField.text =  adventure.friendName
+        locationLabel.text = friendAdventure.name
+        addressLabel.text = friendAdventure.address
+        friendTextField.text =  friendAdventure.friendName
         updateMap()
     }
     
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
-        mapView.addAnnotation(adventure)
-        mapView.setCenter(adventure.coordinate, animated: true)
+        mapView.addAnnotation(friendAdventure)
+        mapView.setCenter(friendAdventure.coordinate, animated: true)
     }
     
     func disableTextEditing() {
@@ -91,14 +92,14 @@ class NewFriendViewController: UIViewController {
         locationLabel.backgroundColor = .clear
         addressLabel.backgroundColor = .clear
         //mylocationLabel.borderStyle = .none
-       // locationLabel.borderStyle = .none
-       // addressLabel.borderStyle = .none
+        // locationLabel.borderStyle = .none
+        // addressLabel.borderStyle = .none
     }
     
     func updateFromInterface() {
-        adventure.name = locationLabel.text!
-        adventure.address = addressLabel.text!
-        adventure.friendName = friendTextField.text!
+        friendAdventure.name = locationLabel.text!
+        friendAdventure.address = addressLabel.text!
+        friendAdventure.friendName = friendTextField.text!
     }
     
     func leaveViewController(){
@@ -107,6 +108,15 @@ class NewFriendViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         } else {
             navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface()
+        if segue.identifier == "findMidpoint" {
+            let destination = segue.destination as! MidpointViewController
+            destination.me = person
+            destination.friend = friendAdventure
         }
     }
     
@@ -122,12 +132,13 @@ class NewFriendViewController: UIViewController {
         leaveViewController()
     }
     
-    
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func saveTryButtonPressed(_ sender: UIBarButtonItem) {
+        print("**** We clicked it!")
         updateFromInterface()
-        adventure.saveData() { success in
+        friendAdventure.saveData(person: person) { success in
             if success {
                 //self.leaveViewController()
+                print("****** I'm about to perform a segue!")
                 self.performSegue(withIdentifier: "findMidpoint", sender: nil)
             } else {
                 //ERROR during save occured
@@ -203,10 +214,10 @@ extension NewFriendViewController: CLLocationManagerDelegate {
                 
             }
             // if there is no location data, make device location the location
-            if self.adventure.name == "" && self.adventure.address == "" {
-                self.adventure.name = name
-                self.adventure.address = address
-                self.adventure.coordinate = currentLocation.coordinate
+            if self.friendAdventure.name == "" && self.friendAdventure.address == "" {
+                self.friendAdventure.name = name
+                self.friendAdventure.address = address
+                self.friendAdventure.coordinate = currentLocation.coordinate
             }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
@@ -220,23 +231,23 @@ extension NewFriendViewController: CLLocationManagerDelegate {
 }
 
 extension NewFriendViewController: GMSAutocompleteViewControllerDelegate {
-
-  // Handle the user's selection.
-  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      adventure.name = place.name ?? "Unknown Place"
-      adventure.address = place.formattedAddress ?? "Unknown Address"
-      adventure.coordinate = place.coordinate
-    updateUserInterface()
-    dismiss(animated: true, completion: nil)
-  }
-
-  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-    // TODO: handle the error.
-    print("Error: ", error.localizedDescription)
-  }
-
-  // User canceled the operation.
-  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    dismiss(animated: true, completion: nil)
-  }
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        friendAdventure.name = place.name ?? "Unknown Place"
+        friendAdventure.address = place.formattedAddress ?? "Unknown Address"
+        friendAdventure.coordinate = place.coordinate
+        updateUserInterface()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

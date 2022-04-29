@@ -19,8 +19,9 @@ class PersonalLocations {
     
     func loadData(user: AdventureUser, completed: @escaping () -> ()) {
         guard user.documentID != "" else {
-            return
-        }
+                    return
+                }
+        
         db.collection("users").document(user.documentID).collection("adventures").addSnapshotListener { querySnapshot, error in
             guard error == nil else {
                 print("😡 ERROR: adding ths snapshot listener \(error!.localizedDescription)")
@@ -30,35 +31,12 @@ class PersonalLocations {
             // there are querySnapshot!.documents.count documents in the snapshot
             for document in querySnapshot!.documents {
                 // You'll have to make sure you have a dictionary initializer in the singular class
-                let adventure = PersonalLocation(dictionary: document.data())
-                adventure.documentID = document.documentID
-                self.locationsArray.append(adventure)
+                let location = PersonalLocation(dictionary: document.data())
+                location.documentID = document.documentID
+                self.locationsArray.append(location)
             }
             completed()
         }
     }
 }
 
-    
-    
-//    func loadData(user: AdventureUser, completed: @escaping () -> ()) {
-//        guard user.documentID != "" else {
-//            return
-//        }
-//        db.collection("users").document(user.documentID).collection("adventures").addSnapshotListener { querySnapshot, error in
-//            guard error == nil else {
-//                print("😡 ERROR: adding the snapshot listener \(error!.localizedDescription)")
-//                return completed()
-//            }
-//            self.locationsArray = [] // clean out existing spotArray since new data will load
-//            // there are querySnapshot!.documents.count documents in the snapshot
-//            for document in querySnapshot!.documents {
-//                // You'll have to make sure you have a dictionary initializer in the singular class
-//                let adventure = AdventureUser(dictionary: document.data())
-//                adventure.documentID = document.documentID
-//                self.locationsArray.append(adventure)
-//            }
-//            completed()
-//    }
-//}
-//}

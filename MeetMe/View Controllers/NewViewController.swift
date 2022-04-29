@@ -39,15 +39,11 @@ class NewViewController: UIViewController {
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
-    //var myName: String!
     
     override func viewDidLoad() {
-        //adventure = AdventureUser(user: adventure)
-        //adventure = Adventure()
         super.viewDidLoad()
         
         adventure = PersonalLocation()
-        //currentUser = currentUser.documentID
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -59,8 +55,6 @@ class NewViewController: UIViewController {
             adventure = PersonalLocation()
         } else {
             disableTextEditing()
-            //cancelBarButton.hide()
-            // saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
         setUpMapView()
@@ -94,13 +88,10 @@ class NewViewController: UIViewController {
     }
     
     func disableTextEditing() {
-        //myNameTextField.isEnabled = false
         nameTextField.isEnabled = false
         addressTextField.isEnabled = false
-        //myNameTextField.backgroundColor = .clear
         nameTextField.backgroundColor = .clear
         addressTextField.backgroundColor = .clear
-        //myNameTextField.borderStyle = .none
         nameTextField.borderStyle = .none
         addressTextField.borderStyle = .none
     }
@@ -117,6 +108,14 @@ class NewViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         } else {
             navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface()
+        if segue.identifier == "nextMeet" {
+            let destination = segue.destination as! NewFriendViewController
+            destination.person = adventure
         }
     }
     

@@ -94,5 +94,4 @@ class PersonalLocation: NSObject, MKAnnotation {
         }
         
     }
-
 }

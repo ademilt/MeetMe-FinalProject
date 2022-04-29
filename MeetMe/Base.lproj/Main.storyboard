@@ -338,11 +338,9 @@
                                 <action selector="cancelButtonPressed:" destination="lV4-cx-52C" id="R5W-Ob-Z6r"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="nuc-6P-hwM">
-                            <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dwj-qU-Dhi">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="lV4-cx-52C" id="zWX-kC-V5G"/>
-                                <segue destination="3gN-Ub-vi9" kind="show" identifier="findMidpoint" animates="NO" id="bSX-GM-OKj"/>
+                                <action selector="saveTryButtonPressed:" destination="lV4-cx-52C" id="D7p-BD-dyy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -353,6 +351,7 @@
                         <outlet property="friendTextField" destination="F7G-l0-kdP" id="ktJ-ZI-TsT"/>
                         <outlet property="locationLabel" destination="9ix-va-2Yg" id="sUT-Vd-gGo"/>
                         <outlet property="mapView" destination="Rnr-Bp-CUB" id="8aU-02-juB"/>
+                        <segue destination="3gN-Ub-vi9" kind="show" identifier="findMidpoint" id="ozp-qL-DCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEv-JP-uds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -406,6 +405,7 @@
                     <navigationItem key="navigationItem" id="Bqi-uM-Ku9"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="mapView" destination="Vgg-gW-eXT" id="SCu-tm-Pxr"/>
                         <outlet property="midpointLabel" destination="aAa-9W-MfG" id="h3L-vG-rhm"/>
                     </connections>
                 </viewController>
@@ -911,7 +911,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lot-bS-7R8"/>
-        <segue reference="bSX-GM-OKj"/>
+        <segue reference="ozp-qL-DCT"/>
         <segue reference="8ga-Vc-ptP"/>
         <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>
