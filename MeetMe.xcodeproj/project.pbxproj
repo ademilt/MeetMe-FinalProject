@@ -26,6 +26,7 @@
 		93A5AB9A281C70E90017AECE /* LocationSuggestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB99281C70E90017AECE /* LocationSuggestionTableViewController.swift */; };
 		93A5AB9E281C73D70017AECE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB9D281C73D60017AECE /* SearchViewController.swift */; };
 		93A5ABA2281C75090017AECE /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA1281C75090017AECE /* MKPlacemark.swift */; };
+		93A5ABA4281C75D80017AECE /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA3281C75D80017AECE /* Placemark.swift */; };
 		93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */; };
 		93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3A2817169C004FCCF5 /* NewViewController.swift */; };
 		93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */; };
@@ -65,6 +66,7 @@
 		93A5AB99281C70E90017AECE /* LocationSuggestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSuggestionTableViewController.swift; sourceTree = "<group>"; };
 		93A5AB9D281C73D60017AECE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		93A5ABA1281C75090017AECE /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
+		93A5ABA3281C75D80017AECE /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		93A7AC3A2817169C004FCCF5 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				93A5ABA1281C75090017AECE /* MKPlacemark.swift */,
+				93A5ABA3281C75D80017AECE /* Placemark.swift */,
 			);
 			path = "Map Search Files";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */,
 				93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */,
 				93A5AB96281AD0690017AECE /* MidpointLocations.swift in Sources */,
+				93A5ABA4281C75D80017AECE /* Placemark.swift in Sources */,
 				93D055BB2818D69100B858D3 /* APIKeys.swift in Sources */,
 				93D055B92818474400B858D3 /* UIBarButtonItem+Hide.swift in Sources */,
 				93A5ABA2281C75090017AECE /* MKPlacemark.swift in Sources */,
