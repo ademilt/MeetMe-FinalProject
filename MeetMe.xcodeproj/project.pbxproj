@@ -22,11 +22,11 @@
 		93A5AB902819F10F0017AECE /* AdventureUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB8F2819F10F0017AECE /* AdventureUsers.swift */; };
 		93A5AB92281ACFF90017AECE /* MidpointLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB91281ACFF90017AECE /* MidpointLocation.swift */; };
 		93A5AB96281AD0690017AECE /* MidpointLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB95281AD0690017AECE /* MidpointLocations.swift */; };
-		93A5AB98281C6C350017AECE /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB97281C6C350017AECE /* LocationSearchTable.swift */; };
-		93A5AB9A281C70E90017AECE /* LocationSuggestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB99281C70E90017AECE /* LocationSuggestionTableViewController.swift */; };
 		93A5AB9E281C73D70017AECE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5AB9D281C73D60017AECE /* SearchViewController.swift */; };
-		93A5ABA2281C75090017AECE /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA1281C75090017AECE /* MKPlacemark.swift */; };
-		93A5ABA4281C75D80017AECE /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA3281C75D80017AECE /* Placemark.swift */; };
+		93A5ABA6281C769E0017AECE /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */; };
+		93A5ABA9281C94730017AECE /* CoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABA8281C94730017AECE /* CoffeeViewController.swift */; };
+		93A5ABAB281C948C0017AECE /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */; };
+		93A5ABAD281C94A00017AECE /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5ABAC281C94A00017AECE /* ParkViewController.swift */; };
 		93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */; };
 		93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3A2817169C004FCCF5 /* NewViewController.swift */; };
 		93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */; };
@@ -62,11 +62,11 @@
 		93A5AB8F2819F10F0017AECE /* AdventureUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureUsers.swift; sourceTree = "<group>"; };
 		93A5AB91281ACFF90017AECE /* MidpointLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointLocation.swift; sourceTree = "<group>"; };
 		93A5AB95281AD0690017AECE /* MidpointLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointLocations.swift; sourceTree = "<group>"; };
-		93A5AB97281C6C350017AECE /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
-		93A5AB99281C70E90017AECE /* LocationSuggestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSuggestionTableViewController.swift; sourceTree = "<group>"; };
 		93A5AB9D281C73D60017AECE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		93A5ABA1281C75090017AECE /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
-		93A5ABA3281C75D80017AECE /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
+		93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		93A5ABA8281C94730017AECE /* CoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewController.swift; sourceTree = "<group>"; };
+		93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		93A5ABAC281C94A00017AECE /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
 		93A7AC382817133F004FCCF5 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		93A7AC3A2817169C004FCCF5 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				9338C48C28162D6E0088177D /* AppDelegate.swift */,
 				9338C48E28162D6E0088177D /* SceneDelegate.swift */,
 				93A5AB822818FA0C0017AECE /* Models */,
-				93A5ABA0281C74EB0017AECE /* Map Search Files */,
 				93A5AB7F2818F9BD0017AECE /* View Controllers */,
 				93A5AB802818F9F50017AECE /* Views */,
 				93A5AB812818FA000017AECE /* Utilities */,
@@ -152,9 +151,8 @@
 				93A7AC3A2817169C004FCCF5 /* NewViewController.swift */,
 				93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */,
 				93A7AC402817174F004FCCF5 /* MidpointViewController.swift */,
-				93A5AB9D281C73D60017AECE /* SearchViewController.swift */,
-				93A5AB97281C6C350017AECE /* LocationSearchTable.swift */,
-				93A5AB99281C70E90017AECE /* LocationSuggestionTableViewController.swift */,
+				93A5ABA7281C93ED0017AECE /* MapViewControllers */,
+				93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */,
 				9338C4AE281654FA0088177D /* OptionViewController.swift */,
 				9338C4A4281642500088177D /* SavedViewController.swift */,
 				93A7AC3E2817171A004FCCF5 /* SavedDetailViewController.swift */,
@@ -198,13 +196,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		93A5ABA0281C74EB0017AECE /* Map Search Files */ = {
+		93A5ABA7281C93ED0017AECE /* MapViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				93A5ABA1281C75090017AECE /* MKPlacemark.swift */,
-				93A5ABA3281C75D80017AECE /* Placemark.swift */,
+				93A5AB9D281C73D60017AECE /* SearchViewController.swift */,
+				93A5ABA8281C94730017AECE /* CoffeeViewController.swift */,
+				93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */,
+				93A5ABAC281C94A00017AECE /* ParkViewController.swift */,
 			);
-			path = "Map Search Files";
+			path = MapViewControllers;
 			sourceTree = "<group>";
 		};
 		E5D29EFEAAF558F2C5576BA3 /* Frameworks */ = {
@@ -350,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A5AB9E281C73D70017AECE /* SearchViewController.swift in Sources */,
+				93A5ABAB281C948C0017AECE /* RestaurantViewController.swift in Sources */,
 				93D055B328183A8E00B858D3 /* Photos.swift in Sources */,
 				93A5AB92281ACFF90017AECE /* MidpointLocation.swift in Sources */,
 				9338C49128162D6E0088177D /* LoginViewController.swift in Sources */,
@@ -357,16 +358,13 @@
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
 				93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
+				93A5ABA9281C94730017AECE /* CoffeeViewController.swift in Sources */,
 				93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */,
 				93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */,
 				93A5AB96281AD0690017AECE /* MidpointLocations.swift in Sources */,
-				93A5ABA4281C75D80017AECE /* Placemark.swift in Sources */,
 				93D055BB2818D69100B858D3 /* APIKeys.swift in Sources */,
 				93D055B92818474400B858D3 /* UIBarButtonItem+Hide.swift in Sources */,
-				93A5ABA2281C75090017AECE /* MKPlacemark.swift in Sources */,
 				93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */,
-				93A5AB9A281C70E90017AECE /* LocationSuggestionTableViewController.swift in Sources */,
-				93A5AB98281C6C350017AECE /* LocationSearchTable.swift in Sources */,
 				93A7AC3B2817169C004FCCF5 /* NewViewController.swift in Sources */,
 				93D055B128183A8700B858D3 /* Photo.swift in Sources */,
 				93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */,
@@ -374,6 +372,8 @@
 				93D055BD2818E7A000B858D3 /* FriendLocation.swift in Sources */,
 				93A5AB84281902AA0017AECE /* FriendLocations.swift in Sources */,
 				93A5AB8E2819E5230017AECE /* AdventureUser.swift in Sources */,
+				93A5ABA6281C769E0017AECE /* LocationSearchTableViewController.swift in Sources */,
+				93A5ABAD281C94A00017AECE /* ParkViewController.swift in Sources */,
 				93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */,
 				93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */,
 				93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */,
