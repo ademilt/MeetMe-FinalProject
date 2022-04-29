@@ -45,7 +45,7 @@ class MidpointViewController: UIViewController {
         midpoint.coordinate = geographicMidpoint(betweenCoordinates: coordinates)
         print(midpoint.coordinate)
         
-        midpointIntro.text = "here is \(me.firstName) and \(friend.friendName)'s midpoint"
+        midpointIntro.text = "\(me.firstName) and \(friend.friendName)'s midpoint"
         
         getLocation()
         if midpoint == nil {

@@ -370,11 +370,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-gW-eXT">
-                                <rect key="frame" x="20" y="261" width="374" height="286"/>
+                                <rect key="frame" x="20" y="202" width="374" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="here is your midpoint..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b9-7c-J1J">
-                                <rect key="frame" x="20" y="172" width="374" height="81"/>
+                                <rect key="frame" x="20" y="113" width="374" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
@@ -382,7 +382,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-fE-P96">
-                                <rect key="frame" x="20" y="555" width="374" height="42"/>
+                                <rect key="frame" x="20" y="482" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
@@ -390,13 +390,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-l1-SnG">
-                                <rect key="frame" x="20" y="605" width="374" height="42"/>
+                                <rect key="frame" x="20" y="532" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="choose an activity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5Y-9m-GBb">
+                                <rect key="frame" x="20" y="591" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0G-NT-HeN">
+                                <rect key="frame" x="20" y="641" width="174" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="coffee">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh7-xO-pSN">
+                                <rect key="frame" x="220" y="641" width="174" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="restaurant">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1w-rB-dpH">
+                                <rect key="frame" x="20" y="716" width="174" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="park">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x6-dD-NFR">
+                                <rect key="frame" x="220" y="716" width="174" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="pick for me!">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m46-rE-K3D"/>
                         <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -424,14 +476,40 @@
                         <outlet property="mapView" destination="Vgg-gW-eXT" id="SCu-tm-Pxr"/>
                         <outlet property="midpointIntro" destination="1b9-7c-J1J" id="RUj-Yb-FlD"/>
                         <outlet property="saveBarButton" destination="mUi-Ke-nTt" id="Q0J-JI-Zwh"/>
-                        <segue destination="hEa-0J-8Vm" kind="show" identifier="midpointSearch" id="QCZ-nr-Hak"/>
+                        <segue destination="hEa-0J-8Vm" kind="show" identifier="showCoffeeNearMidpoint" id="QCZ-nr-Hak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30t-zX-FVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5124.6376811594209" y="-265.17857142857144"/>
         </scene>
-        <!--Search View Controller-->
+        <!--View Controller-->
+        <scene sceneID="ZzV-zz-5Ur">
+            <objects>
+                <viewController id="1Hu-Xc-8ZP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uvh-5Y-2Fy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-vs-fVr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLA-Oa-eIX"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Snu-vs-fVr" firstAttribute="leading" secondItem="HLA-Oa-eIX" secondAttribute="leading" id="Hhr-JQ-AIH"/>
+                            <constraint firstItem="HLA-Oa-eIX" firstAttribute="bottom" secondItem="Snu-vs-fVr" secondAttribute="bottom" id="c9l-ca-4hP"/>
+                            <constraint firstItem="Snu-vs-fVr" firstAttribute="top" secondItem="HLA-Oa-eIX" secondAttribute="top" id="pL5-Sd-csW"/>
+                            <constraint firstItem="HLA-Oa-eIX" firstAttribute="trailing" secondItem="Snu-vs-fVr" secondAttribute="trailing" id="pbV-gT-xig"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQG-TW-QtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5916" y="-1536"/>
+        </scene>
+        <!--Coffee Near Midpoint-->
         <scene sceneID="TVJ-TJ-OXx">
             <objects>
                 <viewController id="hEa-0J-8Vm" customClass="SearchViewController" customModule="MeetMe" sceneMemberID="viewController">
@@ -439,22 +517,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pXQ-Ti-ccs">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fw3-aO-Bpl">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xLt-za-BXu"/>
                         <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Fw3-aO-Bpl" firstAttribute="bottom" secondItem="xLt-za-BXu" secondAttribute="bottom" id="HXk-Tj-2bv"/>
+                            <constraint firstItem="Fw3-aO-Bpl" firstAttribute="leading" secondItem="xLt-za-BXu" secondAttribute="leading" id="K2C-Si-jGq"/>
+                            <constraint firstItem="Fw3-aO-Bpl" firstAttribute="top" secondItem="xLt-za-BXu" secondAttribute="top" id="YG3-4q-6EG"/>
+                            <constraint firstItem="Fw3-aO-Bpl" firstAttribute="trailing" secondItem="xLt-za-BXu" secondAttribute="trailing" id="qtx-3L-f0b"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="adg-U9-qiW"/>
+                    <navigationItem key="navigationItem" title="Coffee Near Midpoint" id="adg-U9-qiW">
+                        <barButtonItem key="rightBarButtonItem" title="Next" image="chevron.right" catalog="system" id="Dbz-8M-BfD"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="pXQ-Ti-ccs" id="f4Q-Bk-zYI"/>
+                        <outlet property="mapView" destination="Fw3-aO-Bpl" id="Lnk-bL-KBa"/>
+                        <segue destination="Ixa-IQ-OFS" kind="show" identifier="LocationSearch" id="uYF-ct-xY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyf-kC-veQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5886.9565217391309" y="-265.17857142857144"/>
+            <point key="canvasLocation" x="5902.898550724638" y="-858.48214285714278"/>
         </scene>
         <!--Option View Controller-->
         <scene sceneID="ycG-RU-JhI">
@@ -503,23 +589,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8P-h3-O1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8905.7971014492759" y="-265.17857142857144"/>
+            <point key="canvasLocation" x="10768" y="-703"/>
         </scene>
-        <!--Location Search Table-->
+        <!--Location Search Table View Controller-->
         <scene sceneID="E0F-JE-Nzt">
             <objects>
-                <tableViewController storyboardIdentifier="LocationSearchTable" id="IvQ-NP-KV1" customClass="LocationSearchTable" customModule="MeetMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationSearchTable" id="IvQ-NP-KV1" customClass="LocationSearchTableViewController" customModule="MeetMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="e1G-EA-aQK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="5Xq-wJ-ZHH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="icg-jJ-Hmc" detailTextLabel="Ojc-xe-k5W" style="IBUITableViewCellStyleSubtitle" id="5Xq-wJ-ZHH">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Xq-wJ-ZHH" id="F93-5D-tDW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="icg-jJ-Hmc">
+                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ojc-xe-k5W">
+                                            <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -532,7 +634,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4r-9Q-RMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7513.04347826087" y="-279.24107142857139"/>
+            <point key="canvasLocation" x="7564" y="-858"/>
         </scene>
         <!--Adventure View Controller-->
         <scene sceneID="QMa-Xx-O8g">
@@ -620,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hql-nT-6vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8284.0579710144939" y="-265.17857142857144"/>
+            <point key="canvasLocation" x="10075" y="-703"/>
         </scene>
         <!--Saved View Controller-->
         <scene sceneID="gME-wd-Sp9">
@@ -695,7 +797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0a9-7G-Uth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3590" y="933"/>
+            <point key="canvasLocation" x="3558" y="481"/>
         </scene>
         <!--Saved Detail View Controller-->
         <scene sceneID="LHE-iB-DZ3">
@@ -768,7 +870,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaW-9l-ert" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5314" y="947"/>
+            <point key="canvasLocation" x="5125" y="481"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j99-7f-PJM">
+            <objects>
+                <viewController id="W1P-ed-a1P" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AJh-d8-QmN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-ii-kru">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QPP-Xc-6XQ"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QPP-Xc-6XQ" firstAttribute="bottom" secondItem="rd2-ii-kru" secondAttribute="bottom" id="Lcu-6D-Z10"/>
+                            <constraint firstItem="QPP-Xc-6XQ" firstAttribute="trailing" secondItem="rd2-ii-kru" secondAttribute="trailing" id="dYT-Sc-S8G"/>
+                            <constraint firstItem="rd2-ii-kru" firstAttribute="leading" secondItem="QPP-Xc-6XQ" secondAttribute="leading" id="nFq-eR-WJ2"/>
+                            <constraint firstItem="rd2-ii-kru" firstAttribute="top" secondItem="QPP-Xc-6XQ" secondAttribute="top" id="xaa-15-oy1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4Q-1b-E6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5916" y="503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjF-JJ-zXT">
@@ -841,26 +969,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUq-dN-dbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7374" y="-990"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="S5F-GG-r13">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DYh-HJ-GKD" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="JMy-sA-RaG"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TKj-2y-cIP">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hEa-0J-8Vm" kind="relationship" relationship="rootViewController" id="AkY-gX-2BA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1TR-ZM-jLy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5888" y="-990"/>
+            <point key="canvasLocation" x="9341" y="-703"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M8t-5i-XDu">
@@ -879,13 +988,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lc-Yy-fJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4516" y="387"/>
+            <point key="canvasLocation" x="4357" y="481"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FMK-BT-Cbn">
+            <objects>
+                <viewController id="OfV-Ba-um1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uC1-9T-SJQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-Wv-8tq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dfq-qJ-DW1"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="PSk-Wv-8tq" firstAttribute="leading" secondItem="Dfq-qJ-DW1" secondAttribute="leading" id="Atk-7a-cxh"/>
+                            <constraint firstItem="Dfq-qJ-DW1" firstAttribute="trailing" secondItem="PSk-Wv-8tq" secondAttribute="trailing" id="MAg-oS-Dp0"/>
+                            <constraint firstItem="Dfq-qJ-DW1" firstAttribute="bottom" secondItem="PSk-Wv-8tq" secondAttribute="bottom" id="TKf-Ro-ewl"/>
+                            <constraint firstItem="PSk-Wv-8tq" firstAttribute="top" secondItem="Dfq-qJ-DW1" secondAttribute="top" id="mvy-uV-ZQt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Gq-zTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5905" y="-174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bg7-ah-Yq1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixa-IQ-OFS" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VF0-9W-65Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fvN-2n-ZiY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -897,15 +1033,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mco-bB-sU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6602.898550724638" y="-279.24107142857139"/>
+            <point key="canvasLocation" x="6755" y="-858"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lot-bS-7R8"/>
-        <segue reference="QCZ-nr-Hak"/>
+        <segue reference="u2E-gn-QXg"/>
         <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
