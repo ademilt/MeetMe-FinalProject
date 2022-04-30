@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -144,8 +145,8 @@
                                 <color key="textColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9No-Cs-vUt">
-                                <rect key="frame" x="117" y="194" width="277" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9No-Cs-vUt">
+                                <rect key="frame" x="117" y="187" width="277" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -153,7 +154,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="where are YOU?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVQ-xM-qw3">
-                                <rect key="frame" x="20" y="261" width="374" height="42"/>
+                                <rect key="frame" x="20" y="236" width="374" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
@@ -161,14 +162,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(if you do not want to use your current location, select &quot;Lookup Place&quot;)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tue-9D-Ncn">
-                                <rect key="frame" x="20" y="682" width="374" height="59"/>
+                                <rect key="frame" x="20" y="703" width="374" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSB-cT-Hsr">
-                                <rect key="frame" x="136" y="749" width="143" height="64"/>
+                                <rect key="frame" x="147" y="770" width="121" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -177,6 +178,7 @@
                                         <fragment content="Lookup Place">
                                             <attributes>
                                                 <font key="NSFont" size="18" name="HiraMaruProN-W4"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -187,22 +189,14 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="esL-6K-gba">
-                                <rect key="frame" x="20" y="311" width="374" height="242"/>
+                                <rect key="frame" x="20" y="311" width="374" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLC-Rz-Anu">
-                                <rect key="frame" x="20" y="561" width="374" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLC-Rz-Anu">
+                                <rect key="frame" x="20" y="581" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
-                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-Hr-R0D">
-                                <rect key="frame" x="20" y="611" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -212,6 +206,14 @@
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
                                 <color key="textColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-Hr-R0D">
+                                <rect key="frame" x="20" y="620" width="374" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
+                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -267,7 +269,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="where is your friend located?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XI8-5H-403">
-                                <rect key="frame" x="20" y="291" width="374" height="42"/>
+                                <rect key="frame" x="20" y="260" width="374" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
@@ -275,7 +277,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaR-bU-djC">
-                                <rect key="frame" x="131" y="742" width="143" height="71"/>
+                                <rect key="frame" x="142" y="762" width="132" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -284,6 +286,7 @@
                                         <fragment content="Lookup Place">
                                             <attributes>
                                                 <font key="NSFont" size="18" name="HiraMaruProN-W4"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -293,40 +296,40 @@
                                     <action selector="lookupButtonPressed:" destination="lV4-cx-52C" eventType="touchUpInside" id="QeD-5t-Tks"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-l0-kdP">
-                                <rect key="frame" x="197" y="218" width="197" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-l0-kdP">
+                                <rect key="frame" x="197" y="211" width="197" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ix-va-2Yg">
-                                <rect key="frame" x="20" y="610" width="374" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ix-va-2Yg">
+                                <rect key="frame" x="20" y="636" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
-                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-gx-49w">
-                                <rect key="frame" x="20" y="660" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rnr-Bp-CUB">
-                                <rect key="frame" x="20" y="341" width="374" height="261"/>
+                                <rect key="frame" x="20" y="341" width="374" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your friend's information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxx-as-nGB">
-                                <rect key="frame" x="20" y="113" width="374" height="73"/>
+                                <rect key="frame" x="21" y="113" width="374" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                 <color key="textColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-gx-49w">
+                                <rect key="frame" x="20" y="675" width="374" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
+                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -371,7 +374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-gW-eXT">
-                                <rect key="frame" x="20" y="202" width="374" height="272"/>
+                                <rect key="frame" x="20" y="202" width="374" height="495"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="here is your midpoint..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b9-7c-J1J">
@@ -382,19 +385,19 @@
                                 <color key="textColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-fE-P96">
-                                <rect key="frame" x="20" y="482" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
-                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-l1-SnG">
-                                <rect key="frame" x="20" y="532" width="374" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-l1-SnG">
+                                <rect key="frame" x="20" y="742" width="374" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
+                                <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-fE-P96">
+                                <rect key="frame" x="20" y="705" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215800000001" green="0.87450981139999995" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                 <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -431,51 +434,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30t-zX-FVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5124.6376811594209" y="-265.17857142857144"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ZzV-zz-5Ur">
-            <objects>
-                <viewController id="1Hu-Xc-8ZP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uvh-5Y-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-vs-fVr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXX-FC-HQl">
-                                <rect key="frame" x="10" y="54" width="174" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="coffee">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="choose an activity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bx-QL-QoX">
-                                <rect key="frame" x="10" y="54" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="HLA-Oa-eIX"/>
-                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="Snu-vs-fVr" firstAttribute="leading" secondItem="HLA-Oa-eIX" secondAttribute="leading" id="Hhr-JQ-AIH"/>
-                            <constraint firstItem="HLA-Oa-eIX" firstAttribute="bottom" secondItem="Snu-vs-fVr" secondAttribute="bottom" id="c9l-ca-4hP"/>
-                            <constraint firstItem="Snu-vs-fVr" firstAttribute="top" secondItem="HLA-Oa-eIX" secondAttribute="top" id="pL5-Sd-csW"/>
-                            <constraint firstItem="HLA-Oa-eIX" firstAttribute="trailing" secondItem="Snu-vs-fVr" secondAttribute="trailing" id="pbV-gT-xig"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PQG-TW-QtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5916" y="-1536"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="TVJ-TJ-OXx">
@@ -575,12 +533,8 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-8R-q58">
-                                        <rect key="frame" x="0.0" y="87" width="414" height="356"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="How was your adventure?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-dA-iUF">
-                                        <rect key="frame" x="0.0" y="451" width="414" height="51"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="write about your favorite memories from this adventure to save and look back on. you can also add a photo!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-dA-iUF">
+                                        <rect key="frame" x="8" y="170" width="398" height="555"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -588,9 +542,16 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[name] and [friend]'s adventure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia7-pk-Z2J">
-                                        <rect key="frame" x="11" y="24" width="389" height="55"/>
+                                        <rect key="frame" x="8" y="0.0" width="398" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                        <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how was your adventure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea7-up-t0b">
+                                        <rect key="frame" x="111" y="141" width="193" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -602,6 +563,10 @@
                         <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <toolbarItems>
+                        <barButtonItem title="Camera" id="DGz-MK-kGw">
+                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="LTN-uH-Wlw"/>
                         <barButtonItem title="Item" image="trash.fill" catalog="system" id="3Lt-hs-2s8">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -612,6 +577,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dV2-IT-lhj">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="qXG-T0-PWu">
+                            <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveTryButtonPressed:" destination="h39-Ur-D7j" id="0IZ-6u-tZG"/>
                             </connections>
@@ -619,17 +585,33 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="adventureImageView" destination="6tb-8R-q58" id="udY-wQ-bat"/>
                         <outlet property="adventureTextView" destination="Dvk-dA-iUF" id="57e-Nx-w14"/>
                         <outlet property="deleteButton" destination="3Lt-hs-2s8" id="m3B-oR-Ovr"/>
                         <outlet property="descriptionLabel" destination="ia7-pk-Z2J" id="RLf-es-8zy"/>
                         <outlet property="saveBarButton" destination="qXG-T0-PWu" id="qc7-NH-kEo"/>
                         <segue destination="ZCj-op-EZl" kind="show" identifier="savedAdventure" id="yXu-E2-dXC"/>
+                        <segue destination="KMV-9n-28r" kind="show" identifier="addPhoto" id="ZeB-8i-tQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hql-nT-6vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7625" y="47"/>
+            <point key="canvasLocation" x="7275" y="18"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IiR-Ln-64k">
+            <objects>
+                <viewController id="KMV-9n-28r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eew-mA-4H1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vKv-Fg-kws"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T0J-fe-DU6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwq-H5-2aB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8062" y="17"/>
         </scene>
         <!--Saved View Controller-->
         <scene sceneID="gME-wd-Sp9">
@@ -710,87 +692,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBc-Rh-Gzj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NBc-Rh-Gzj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x and y's adventure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLv-8A-CWT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x and y's adventure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLv-8A-CWT">
                                         <rect key="frame" x="86.5" y="24" width="241" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="nZD-Ov-ukv"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                         <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0JB-Dj-DiE">
-                                        <rect key="frame" x="20" y="87" width="374" height="381"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="356" id="BcY-5B-4zp"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0JB-Dj-DiE">
+                                        <rect key="frame" x="20" y="87" width="374" height="341"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="We had the best time." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bo8-G2-xdv">
-                                        <rect key="frame" x="0.0" y="476" width="414" height="246"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="we had the best time!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bo8-G2-xdv">
+                                        <rect key="frame" x="0.0" y="538" width="414" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x started at [myLoc] and y started at [theirLoc]! we met halfway around [midLoc]!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-ew-4p2">
+                                        <rect key="frame" x="14" y="436" width="386" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <color key="textColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="0JB-Dj-DiE" firstAttribute="centerX" secondItem="NBc-Rh-Gzj" secondAttribute="centerX" id="2XA-9z-leT"/>
-                                    <constraint firstItem="bo8-G2-xdv" firstAttribute="centerX" secondItem="NBc-Rh-Gzj" secondAttribute="centerX" id="6jT-cL-dyA"/>
-                                    <constraint firstItem="0JB-Dj-DiE" firstAttribute="top" secondItem="jLv-8A-CWT" secondAttribute="bottom" constant="21" id="Abn-nq-vNn"/>
-                                    <constraint firstItem="0JB-Dj-DiE" firstAttribute="leading" secondItem="NBc-Rh-Gzj" secondAttribute="leading" constant="20" id="EHr-Jy-SUd"/>
-                                    <constraint firstItem="jLv-8A-CWT" firstAttribute="centerX" secondItem="NBc-Rh-Gzj" secondAttribute="centerX" id="MgZ-Rb-6KC"/>
-                                    <constraint firstItem="jLv-8A-CWT" firstAttribute="centerX" secondItem="0JB-Dj-DiE" secondAttribute="centerX" id="OuE-EA-sHT"/>
-                                    <constraint firstAttribute="trailing" secondItem="bo8-G2-xdv" secondAttribute="trailing" id="ZRB-Gt-tfw"/>
-                                    <constraint firstItem="bo8-G2-xdv" firstAttribute="leading" secondItem="NBc-Rh-Gzj" secondAttribute="leading" id="cwE-8g-oK7"/>
-                                    <constraint firstAttribute="bottom" secondItem="bo8-G2-xdv" secondAttribute="bottom" constant="3" id="hoJ-6b-xoa"/>
-                                    <constraint firstItem="jLv-8A-CWT" firstAttribute="top" secondItem="NBc-Rh-Gzj" secondAttribute="top" constant="24" id="iQV-pk-iPQ"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3b2-hq-2a9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="3b2-hq-2a9" firstAttribute="trailing" secondItem="NBc-Rh-Gzj" secondAttribute="trailing" id="6tN-Ye-qmD"/>
-                            <constraint firstItem="NBc-Rh-Gzj" firstAttribute="leading" secondItem="3b2-hq-2a9" secondAttribute="leading" id="HmG-Du-2YG"/>
-                            <constraint firstItem="NBc-Rh-Gzj" firstAttribute="top" secondItem="3b2-hq-2a9" secondAttribute="top" id="JcJ-rB-ryV"/>
-                            <constraint firstItem="NBc-Rh-Gzj" firstAttribute="bottom" secondItem="3b2-hq-2a9" secondAttribute="bottom" id="LKu-j7-G2u"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="yGx-2r-kWB"/>
+                    <connections>
+                        <outlet property="adventureLabel" destination="jLv-8A-CWT" id="whA-Rd-6vw"/>
+                        <outlet property="descriptionLabel" destination="i8e-ew-4p2" id="3ov-ig-Mgn"/>
+                        <outlet property="notesField" destination="bo8-G2-xdv" id="kBX-Kf-38W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaW-9l-ert" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5125" y="595"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="j99-7f-PJM">
-            <objects>
-                <viewController id="W1P-ed-a1P" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AJh-d8-QmN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-ii-kru">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QPP-Xc-6XQ"/>
-                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="QPP-Xc-6XQ" firstAttribute="bottom" secondItem="rd2-ii-kru" secondAttribute="bottom" id="Lcu-6D-Z10"/>
-                            <constraint firstItem="QPP-Xc-6XQ" firstAttribute="trailing" secondItem="rd2-ii-kru" secondAttribute="trailing" id="dYT-Sc-S8G"/>
-                            <constraint firstItem="rd2-ii-kru" firstAttribute="leading" secondItem="QPP-Xc-6XQ" secondAttribute="leading" id="nFq-eR-WJ2"/>
-                            <constraint firstItem="rd2-ii-kru" firstAttribute="top" secondItem="QPP-Xc-6XQ" secondAttribute="top" id="xaa-15-oy1"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f4Q-1b-E6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7239" y="-1536"/>
+            <point key="canvasLocation" x="5124.6376811594209" y="594.64285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjF-JJ-zXT">
@@ -863,7 +811,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUq-dN-dbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6587" y="358"/>
+            <point key="canvasLocation" x="6359" y="595"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M8t-5i-XDu">
@@ -883,32 +831,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lc-Yy-fJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4357" y="596"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FMK-BT-Cbn">
-            <objects>
-                <viewController id="OfV-Ba-um1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uC1-9T-SJQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-Wv-8tq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Dfq-qJ-DW1"/>
-                        <color key="backgroundColor" red="0.96862745289999996" green="0.9529411793" blue="0.84313726430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="PSk-Wv-8tq" firstAttribute="leading" secondItem="Dfq-qJ-DW1" secondAttribute="leading" id="Atk-7a-cxh"/>
-                            <constraint firstItem="Dfq-qJ-DW1" firstAttribute="trailing" secondItem="PSk-Wv-8tq" secondAttribute="trailing" id="MAg-oS-Dp0"/>
-                            <constraint firstItem="Dfq-qJ-DW1" firstAttribute="bottom" secondItem="PSk-Wv-8tq" secondAttribute="bottom" id="TKf-Ro-ewl"/>
-                            <constraint firstItem="PSk-Wv-8tq" firstAttribute="top" secondItem="Dfq-qJ-DW1" secondAttribute="top" id="mvy-uV-ZQt"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Gq-zTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6588" y="-1536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bg7-ah-Yq1">
@@ -931,18 +853,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lot-bS-7R8"/>
+        <segue reference="u2E-gn-QXg"/>
         <segue reference="yXu-E2-dXC"/>
-        <segue reference="iCz-te-dIo"/>
+        <segue reference="l2S-uP-ahr"/>
         <segue reference="a1d-Sb-el6"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

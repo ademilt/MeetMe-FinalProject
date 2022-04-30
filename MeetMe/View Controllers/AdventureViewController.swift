@@ -17,12 +17,15 @@ class AdventureViewController: UIViewController {
     @IBOutlet weak var adventureTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    //inherited variables
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
     var currentUser: AdventureUser!
+    
+   // var imagePickerController = UIImagePickerController()
 
-   
+
     var adventure: Adventure!
     //var photo: Photo!
     
@@ -43,6 +46,11 @@ class AdventureViewController: UIViewController {
         adventure.notes = adventureTextView.text!
         adventure.me =  me.firstName
         adventure.friend = friend.friendName
+        print(midpoint.name)
+        adventure.meetingLocation = midpoint.name
+        print(adventure.meetingLocation)
+        adventure.friendOriginalLocation = friend.name
+        adventure.myOriginalLocation = me.name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +62,12 @@ class AdventureViewController: UIViewController {
             destination.midpoint = midpoint
             //destination.currentUser = currentUser
         }
+//        if segue.identifier == "addPhoto"{
+//            let navigationController = segue.destination as! UINavigationController
+//            let destination = navigationController.viewControllers.first as! PhotoViewController
+//            destination.adventure = adventure
+//            destination.photo = photo
+//        }
     }
     
     func leaveViewController() {
@@ -72,7 +86,7 @@ class AdventureViewController: UIViewController {
     @IBAction func saveTryButtonPressed(_ sender: UIBarButtonItem) {
         updateFromUserInterface()
         print("Save button has been pressed.")
-        adventure.saveData(person: me, friend: friend, midpoint: midpoint) {
+        adventure.saveData() {
             success in
             if success {
                 self.performSegue(withIdentifier: "savedAdventure", sender: nil)
@@ -83,22 +97,25 @@ class AdventureViewController: UIViewController {
         }
     }
     
-    
-//    @IBAction func saveButtonPressed(_ sender: Any) {
-//        updateFromUserInterface()
-//        print("Save button has been pressed.")
-//        adventure.saveData(person: me, friend: friend, midpoint: midpoint) {
-//            success in
-//            if success {
-//                self.performSegue(withIdentifier: "savedAdventure", sender: nil)
-//            } else {
-//                //ERROR during save occured
-//                self.oneButtonAlert(title: "Save Failed", message: "For some reason the data would not save to the cloud")
-//            }
-//        }
-//    }
-    
     @IBAction func deleteButtonPressed(_ sender: Any) {
     }
+    
+//    func cameraOrLibraryAlert() {
+//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//
+//        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { [self] _ in
+//            self.accessPhotoLibrary()
+//        }
+//        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [self] _ in
+//            self.accessCamera()
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//
+//        alertController.addAction(photoLibraryAction)
+//        alertController.addAction(cameraAction)
+//        alertController.addAction(cancelAction)
+//
+//        present(alertController, animated: true, completion: nil)
+//    }
 }
 

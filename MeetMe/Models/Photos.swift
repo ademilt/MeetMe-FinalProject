@@ -16,11 +16,11 @@ class Photos {
         db = Firestore.firestore()
     }
     
-    func loadData(location: PersonalLocation, completed: @escaping () -> ()) {
-        guard location.documentID != "" else {
+    func loadData(adventure:Adventure, completed: @escaping () -> ()) {
+        guard adventure.documentID != "" else {
             return
         }
-        db.collection("locations").document(location.documentID).collection("photos").addSnapshotListener { querySnapshot, error in
+        db.collection("adventure").document(adventure.documentID).collection("photos").addSnapshotListener { querySnapshot, error in
             guard error == nil else {
                 print("😡 ERROR: adding ths snapshot listener \(error!.localizedDescription)")
                 return completed()

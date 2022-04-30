@@ -8,10 +8,12 @@
 import UIKit
 
 class SavedTableViewCell: UITableViewCell {
-
-    var adventure: Adventure!
+    
+    
     @IBOutlet weak var adventureLabel: UILabel!
-    func didSet() {
-        adventureLabel.text = adventure.adventureName
+    var adventure: Adventure!{
+        didSet{adventureLabel.text = "\(adventure.adventureName)"
+        }
     }
+    
 }

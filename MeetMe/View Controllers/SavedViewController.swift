@@ -14,15 +14,15 @@ class SavedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    var adventures: Adventures!
    
+    var adventures: Adventures!
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
     var adventure: Adventure!
     var currentUser: AdventureUser!
-
-//    we need to load PersonalLocation, this is the root document for all subdocuments
+    
+    //var photo: Photo
     
     
     override func viewDidLoad() {
@@ -37,9 +37,12 @@ class SavedViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setToolbarHidden(false, animated: true)
 
-        //adventures.loadData(person: me, friend: friend, midpoint: midpoint) {
-           // self.tableView.reloadData()
-        //}
+        adventures.loadData {
+           self.tableView.reloadData()
+        }
+//        photos.loadData(spot: spot) {
+//            self.collectionView.reloadData()
+//        }
         //updateUserInterface()
     }
     
@@ -54,10 +57,23 @@ class SavedViewController: UIViewController {
 //    func updateUserInterface() {
 //        adventureCell.text = adventure.adventureName
 //    }
+//    func updateFromUserInterface(){
+//       
+//    }
+    
+    func leaveViewController() {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
     @IBAction func addButtonPressed(_ sender: Any) {
     }
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        leaveViewController()
     }
 }
 
