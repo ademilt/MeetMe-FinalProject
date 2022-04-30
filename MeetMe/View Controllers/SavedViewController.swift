@@ -15,6 +15,7 @@ class SavedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     var adventures: Adventures!
+   
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
@@ -33,7 +34,7 @@ class SavedViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setToolbarHidden(false, animated: true)
 
-        adventures.loadData() {
+        adventures.loadData(person: me, friend: friend, midpoint: midpoint) {
             self.tableView.reloadData()
         }
         //updateUserInterface()
