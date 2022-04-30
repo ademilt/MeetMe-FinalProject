@@ -49,7 +49,7 @@ class Photo {
         self.init(image: UIImage(), description: description, photoUserID: photoUserID, photoUserEmail: photoUserEmail, date: date, photoURL: photoURL, documentID: "")
     }
     
-    func saveData(location: PersonalLocation, completion: @escaping (Bool) -> ()) {
+    func saveData(adventure: Adventure, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let storage = Storage.storage()
         
@@ -69,7 +69,7 @@ class Photo {
         }
         
         //create a storage reference to upload this image file to the location's folder
-        let storageRef = storage.reference().child(location.documentID).child(documentID)
+        let storageRef = storage.reference().child(adventure.documentID).child(documentID)
         
         //create an upload task
         let uploadTask = storageRef.putData(photoData, metadata: uploadMetaData) { (metadata, error) in
@@ -93,13 +93,13 @@ class Photo {
                 
                 // Create the dictionary representing data we want to save
                 let dataToSave: [String: Any] = self.dictionary
-                let ref = db.collection("locations").document(location.documentID).collection("photos").document(self.documentID)
+                let ref = db.collection("adventure").document(adventure.documentID).collection("photos").document(self.documentID)
                 ref.setData(dataToSave) { error in
                     guard error == nil else {
                         print("😡 ERROR: Updating document \(error!.localizedDescription).")
                         return completion(false)
                     }
-                    print("😀 Updated document \(self.documentID) in location: \(location.documentID). It worked!")
+                    print("😀 Updated document \(self.documentID) in location: \(adventure.documentID). It worked!")
                     completion(true)
                 }
             }
@@ -107,19 +107,19 @@ class Photo {
         
         uploadTask.observe(.failure) { snapshot in
             if let error = snapshot.error {
-                print("ERROR: Upload task for file \(self.documentID) failed, in location \(location.documentID), with error \(error.localizedDescription)")
+                print("ERROR: Upload task for file \(self.documentID) failed, in location \(adventure.documentID), with error \(error.localizedDescription)")
             }
             completion(false)
         }
     }
     
-    func loadImage(location: PersonalLocation, completion: @escaping (Bool) -> ()) {
-        guard location.documentID != "" else {
+    func loadImage(adventure: Adventure, completion: @escaping (Bool) -> ()) {
+        guard adventure.documentID != "" else {
             print("ERROR: did not pass a valid location into loadImage")
             return
         }
         let storage = Storage.storage()
-        let storageRef = storage.reference().child(location.documentID).child(documentID)
+        let storageRef = storage.reference().child(adventure.documentID).child(documentID)
         storageRef.getData(maxSize: 25 * 1024 * 1024) { data, error in
             if let error = error {
                 print("ERROR: An error occurred while reading data from file ref: \(storageRef) error = \(error.localizedDescription)")
@@ -131,27 +131,27 @@ class Photo {
         }
     }
     
-    func deleteData(location: PersonalLocation, completion: @escaping (Bool) -> ()) {
+    func deleteData(adventure: Adventure, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
-        db.collection("locations").document(location.documentID).collection("photos").document(documentID).delete { error in
+        db.collection("locations").document(adventure.documentID).collection("photos").document(documentID).delete { error in
             if let error = error {
                 print("ERROR: deleting photo documentID \(self.documentID). Error: \(error.localizedDescription)")
                 completion(false)
             } else {
-                self.deleteImage(location: location)
+                self.deleteImage(adventure: adventure)
                 print("Successfully deleted document \(self.documentID)")
                 completion(true)
             }
         }
     }
     
-    private func deleteImage(location: PersonalLocation) {
-        guard location.documentID != "" else {
+    private func deleteImage(adventure: Adventure) {
+        guard adventure.documentID != "" else {
             print("ERROR: did not pass a valid location into deleteImage")
             return
         }
         let storage = Storage.storage()
-        let storageRef = storage.reference().child(location.documentID).child(documentID)
+        let storageRef = storage.reference().child(adventure.documentID).child(documentID)
         storageRef.delete { error in
             if let error = error {
                 print("ERROR: could not delete photo \(error.localizedDescription)")

@@ -27,12 +27,7 @@ class MidpointViewController: UIViewController {
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     
-    //var meCoordinate: PersonalLocation!
-    //var friendCoordinate: FriendLocation!
-    //friend coordinates --> friend.coordinate
-    //me coordinates --> me.coordinate
-    //var coordinates = [me.coordinate, friend.coordinate]
-    //    me.coordinate,friend.coordinate
+    
     
     override func viewDidLoad() {
         

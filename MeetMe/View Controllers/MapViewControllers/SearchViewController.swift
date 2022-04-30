@@ -22,6 +22,8 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
 
     //@IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
+    
     
     var me: PersonalLocation!
     var friend: FriendLocation!
@@ -54,6 +56,15 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         updateUserInterface()
        }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveAdventure" {
+            let destination = segue.destination as! AdventureViewController
+            destination.me = me
+            destination.friend = friend
+            destination.midpoint = midpoint
+        }
+    }
+    
        func setUpMapView() {
            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
            let region = MKCoordinateRegion(center: midpoint.coordinate, span: span)
@@ -79,6 +90,8 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
            }
        }
     
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier:
                                                                       MKMapViewDefaultAnnotationViewReuseIdentifier,
@@ -91,6 +104,10 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         }
         return nil
     }
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "saveAdventure", sender: nil)
+    }
+    
    }
 
    extension SearchViewController: CLLocationManagerDelegate {
@@ -189,7 +206,7 @@ extension SearchViewController: HandleMapSearch {
         }
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: midpoint.coordinate, span: span)
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         mapView.setRegion(region, animated: true)
     }
 }

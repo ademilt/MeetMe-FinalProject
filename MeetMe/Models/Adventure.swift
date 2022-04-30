@@ -14,33 +14,36 @@ import FirebaseAuthUI
 class Adventure{
     
     var adventureName: String
-    var me: PersonalLocation
-    var friend: FriendLocation
+    var me: String
+    var friend: String
+    var notes: String
     var postingUserID: String
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["adventureName":adventureName, "me": me, "friend": friend, "postingUserID": postingUserID, "documentID": documentID]
+        return ["adventureName":adventureName, "me": me, "friend": friend,"notes":notes,"postingUserID": postingUserID, "documentID": documentID]
     }
     
-    init(adventureName: String, me: PersonalLocation, friend: FriendLocation, postingUserID: String, documentID: String) {
+        init(adventureName: String, me: String, friend: String, notes: String, postingUserID: String, documentID: String) {
         self.adventureName = adventureName
         self.me = me
         self.friend = friend
+        self.notes = notes
         self.postingUserID = postingUserID
         self.documentID = documentID
     }
     
     convenience init() {
-        self.init(adventureName:"", me: PersonalLocation(), friend: FriendLocation(), postingUserID: "", documentID: "")
+        self.init(adventureName:"", me: "", friend: "", notes: "", postingUserID: "", documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
         let adventureName = dictionary["adventureName"] as! String? ?? ""
-        let me = dictionary["me"] as! PersonalLocation? ?? nil
-        let friend = dictionary["friend"] as! FriendLocation? ?? nil
+        let me = dictionary["me"] as! String? ?? ""
+        let friend = dictionary["friend"] as! String? ?? ""
+        let notes = dictionary["notes"] as! String? ?? ""
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-        self.init(adventureName: adventureName, me: me!, friend:  friend!, postingUserID: postingUserID, documentID: "")
+            self.init(adventureName: adventureName, me: me, friend:  friend, notes:notes, postingUserID: postingUserID, documentID: "")
     }
     
     func saveData(person: PersonalLocation, friend: FriendLocation, midpoint: MidpointLocation, completion: @escaping (Bool) -> ()) {
@@ -77,6 +80,19 @@ class Adventure{
             }
         }
 
+    }
+    
+    func deleteData(adventure: Adventure, completion: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("adventure").document(documentID).delete { error in
+            if let error = error {
+                print("ERROR: deleting adventure documentID \(self.documentID). Error: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                print("Successfully deleted document \(self.documentID)")
+                    completion(true)
+            }
+        }
     }
     
 }
