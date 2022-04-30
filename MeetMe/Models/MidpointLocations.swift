@@ -17,9 +17,9 @@ class MidpointLocations {
     }
     func loadData(user: AdventureUser, person: PersonalLocation, friend: FriendLocation, completed: @escaping () -> ()) {
         guard person.documentID != "" else {
-                    return
-                }
-
+            return
+        }
+        
         db.collection("users").document(user.documentID).collection("adventures").document(person.documentID).collection("friend").document(friend.documentID).collection("midpoint").addSnapshotListener { querySnapshot, error in
             guard error == nil else {
                 print("😡 ERROR: adding ths snapshot listener \(error!.localizedDescription)")

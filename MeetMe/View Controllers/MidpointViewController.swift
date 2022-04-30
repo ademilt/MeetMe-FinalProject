@@ -19,23 +19,23 @@ class MidpointViewController: UIViewController {
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
-    
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
     var currentUser: AdventureUser!
 
-    
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
-    
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         midpoint = MidpointLocation()
         
+        //basic UI
+        UISetup()
+        
+        //adding coordinates to list of CLLocationCoordinate2D type to convert to midpoint
         var coordinates : [CLLocationCoordinate2D] = []
         coordinates.append(me.coordinate)
         coordinates.append(friend.coordinate)
@@ -162,7 +162,7 @@ class MidpointViewController: UIViewController {
     }
 }
 
-//extension to convert given lat/long coordinates between radians and degrees
+//extension to convert given lat/long coordinates between radians and degrees and find midpoint
 extension FloatingPoint {
     var degreesToRadians: Self { self * .pi / 180 }
     var radiansToDegrees: Self { self * 180 / .pi }
@@ -248,4 +248,21 @@ extension MidpointViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("ERROR: \(error.localizedDescription). Failed to get device location.")
     }
+}
+
+extension MidpointViewController{
+    func UISetup(){
+    midpointIntro.layer.borderWidth = 0.5
+    midpointIntro.layer.cornerRadius = 20
+    midpointIntro.layer.borderColor = UIColor.white.cgColor
+    midpointIntro.clipsToBounds = true
+    midpointIntro.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+    
+    locationLabel.layer.cornerRadius = 20
+    locationLabel.clipsToBounds = true
+    locationLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+    addressLabel.layer.cornerRadius = 20
+    addressLabel.clipsToBounds = true
+    addressLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+}
 }

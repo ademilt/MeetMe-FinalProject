@@ -17,8 +17,8 @@ class FriendLocations {
     }
     func loadData(user: AdventureUser, person: PersonalLocation, completed: @escaping () -> ()) {
         guard person.documentID != "" else {
-                    return
-                }
+            return
+        }
         
         db.collection("users").document(user.documentID).collection("adventures").document(person.documentID).collection("friend").addSnapshotListener { querySnapshot, error in
             guard error == nil else {

@@ -9,11 +9,9 @@ import UIKit
 
 class SavedTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var adventureLabel: UILabel!
     var adventure: Adventure!{
         didSet{adventureLabel.text = "\(adventure.adventureName)"
         }
     }
-    
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import CoreLocation
 import GooglePlaces
 import MapKit
@@ -24,7 +25,9 @@ class NewViewController: UIViewController {
     @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var informationLabel: UILabel!
-    
+    @IBOutlet weak var youLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+   
     //document or snapshot listener variable
     var adventure: PersonalLocation!
     var currentUser: AdventureUser!
@@ -37,6 +40,9 @@ class NewViewController: UIViewController {
         super.viewDidLoad()
         
         adventure = PersonalLocation()
+        
+        //setup shadows for UI
+        UISetup()
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -217,23 +223,66 @@ extension NewViewController: CLLocationManagerDelegate {
 }
 
 extension NewViewController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        adventure.name = place.name ?? "Unknown Place"
+        adventure.address = place.formattedAddress ?? "Unknown Address"
+        adventure.coordinate = place.coordinate
+        updateUserInterface()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
-  // Handle the user's selection.
-  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-      adventure.name = place.name ?? "Unknown Place"
-      adventure.address = place.formattedAddress ?? "Unknown Address"
-      adventure.coordinate = place.coordinate
-    updateUserInterface()
-    dismiss(animated: true, completion: nil)
-  }
-
-  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-    // TODO: handle the error.
-    print("Error: ", error.localizedDescription)
-  }
-
-  // User canceled the operation.
-  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    dismiss(animated: true, completion: nil)
-  }
+extension NewViewController{
+    func UISetup(){
+        informationLabel.layer.borderWidth = 0.5
+        informationLabel.layer.cornerRadius = 20
+        informationLabel.layer.borderColor = UIColor.white.cgColor
+        informationLabel.clipsToBounds = true
+        informationLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        
+        youLabel.layer.cornerRadius = 20
+        youLabel.layer.borderColor = UIColor.white.cgColor
+        youLabel.clipsToBounds = true
+        youLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        
+        locationLabel.layer.cornerRadius = 20
+        locationLabel.clipsToBounds = true
+        locationLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        
+        addressLabel.layer.cornerRadius = 20
+        addressLabel.clipsToBounds = true
+        addressLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        
+        nameLabel.layer.cornerRadius = 20
+        nameLabel.clipsToBounds = true
+        nameLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        
+        myNameTextField.layer.cornerRadius = 5
+        myNameTextField.clipsToBounds = true
+        
+        myNameTextField.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        lookupButton.addBorder(width: 0, radius: 20, color: UIColor.clear)
+        lookupButton.layer.shadowRadius = 4
+        lookupButton.layer.shadowOpacity = 0.4
+        
+        mapView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+    }
 }

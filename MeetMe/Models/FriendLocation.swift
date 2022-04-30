@@ -65,7 +65,7 @@ class FriendLocation: NSObject, MKAnnotation {
         let longitude = dictionary["longitude"] as! Double? ?? 0.0
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-            self.init(friendName: friendName, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
+        self.init(friendName: friendName, name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
     }
     
     func saveData(person: PersonalLocation, completion: @escaping (Bool) -> ()) {

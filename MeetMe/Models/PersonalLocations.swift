@@ -19,8 +19,8 @@ class PersonalLocations {
     
     func loadData(user: AdventureUser, completed: @escaping () -> ()) {
         guard user.documentID != "" else {
-                    return
-                }
+            return
+        }
         
         db.collection("users").document(user.documentID).collection("adventures").addSnapshotListener { querySnapshot, error in
             guard error == nil else {

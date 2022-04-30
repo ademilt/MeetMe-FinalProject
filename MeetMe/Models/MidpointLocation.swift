@@ -41,7 +41,7 @@ class MidpointLocation: NSObject, MKAnnotation {
     var subtitle: String? {
         return address
     }
-
+    
     
     init(name: String, address: String, coordinate: CLLocationCoordinate2D, postingUserID: String, documentID: String) {
         self.name = name
@@ -62,7 +62,7 @@ class MidpointLocation: NSObject, MKAnnotation {
         let longitude = dictionary["longitude"] as! Double? ?? 0.0
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-            self.init(name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
+        self.init(name: name, address: address, coordinate: coordinate, postingUserID: postingUserID, documentID: "")
     }
     
     func saveData(person: PersonalLocation, friend: FriendLocation, completion: @escaping (Bool) -> ()) {
@@ -98,6 +98,6 @@ class MidpointLocation: NSObject, MKAnnotation {
                 completion(true)
             }
         }
-
+        
     }
 }

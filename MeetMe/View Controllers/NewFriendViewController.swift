@@ -18,7 +18,9 @@ class NewFriendViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var friendLabel: UILabel!
+    @IBOutlet weak var friendNameLabel: UILabel!
     
     var friendAdventure: FriendLocation!
     var person: PersonalLocation!
@@ -31,12 +33,14 @@ class NewFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //UI in viewDidLoad
+       UISetup()
+        
         friendAdventure = FriendLocation()
         guard person != nil else {
             print("No person passed through.")
             return
         }
-        
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -53,7 +57,7 @@ class NewFriendViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if friendAdventure.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
@@ -129,12 +133,9 @@ class NewFriendViewController: UIViewController {
     }
     
     @IBAction func saveTryButtonPressed(_ sender: UIBarButtonItem) {
-        //print("**** We clicked it!")
         updateFromInterface()
         friendAdventure.saveData(person: person) { success in
             if success {
-                //self.leaveViewController()
-                //print("****** I'm about to perform a segue!")
                 self.performSegue(withIdentifier: "findMidpoint", sender: nil)
             } else {
                 //ERROR during save occured
@@ -208,12 +209,6 @@ extension NewFriendViewController: CLLocationManagerDelegate {
                 print("ERROR: retrieving placemark.")
                 
             }
-            // if there is no location data, make device location the location
-//            if self.friendAdventure.name == "" && self.friendAdventure.address == "" {
-//                self.friendAdventure.name = name
-//                self.friendAdventure.address = address
-//                self.friendAdventure.coordinate = currentLocation.coordinate
-//            }
             self.mapView.userLocation.title = name
             self.mapView.userLocation.subtitle = address.replacingOccurrences(of: "\n", with: ", ")
             self.updateUserInterface()
@@ -244,5 +239,42 @@ extension NewFriendViewController: GMSAutocompleteViewControllerDelegate {
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewFriendViewController {
+    func UISetup(){
+        infoLabel.layer.borderWidth = 0.5
+        infoLabel.layer.cornerRadius = 20
+        infoLabel.layer.borderColor = UIColor.white.cgColor
+        infoLabel.clipsToBounds = true
+        infoLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        friendLabel.layer.cornerRadius = 20
+        friendLabel.layer.borderColor = UIColor.white.cgColor
+        friendLabel.clipsToBounds = true
+        friendLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        friendNameLabel.layer.cornerRadius = 20
+        friendNameLabel.clipsToBounds = true
+        friendNameLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        locationLabel.layer.cornerRadius = 20
+        locationLabel.clipsToBounds = true
+        locationLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        addressLabel.layer.cornerRadius = 20
+        addressLabel.clipsToBounds = true
+        addressLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        friendTextField.layer.cornerRadius = 5
+        friendTextField.clipsToBounds = true
+        friendTextField.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        mapView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        friendLookupButton.addBorder(width: 0, radius: 20, color: UIColor.clear)
+        friendLookupButton.layer.shadowRadius = 3
+        friendLookupButton.layer.shadowOpacity = 0.2
     }
 }

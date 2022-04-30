@@ -14,21 +14,18 @@ class SavedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-   
+    
     var adventures: Adventures!
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
-    
     var adventure: Adventure!
     var currentUser: AdventureUser!
     
-    //var photo: Photo
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         adventures = Adventures()
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -36,15 +33,9 @@ class SavedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setToolbarHidden(false, animated: true)
-
         adventures.loadData {
-           self.tableView.reloadData()
+            self.tableView.reloadData()
         }
-        
-      // print(adventure.meetingLocation)
-//        photos.loadData(spot: spot) {
-//            self.collectionView.reloadData()
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,6 +57,7 @@ class SavedViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         leaveViewController()
     }

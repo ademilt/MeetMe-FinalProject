@@ -11,9 +11,9 @@ class AdventureViewController: UIViewController {
     
     
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
-    @IBOutlet weak var adventureImageView: UIImageView!
     @IBOutlet weak var adventureTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -23,15 +23,15 @@ class AdventureViewController: UIViewController {
     var midpoint: MidpointLocation!
     var currentUser: AdventureUser!
     
-   // var imagePickerController = UIImagePickerController()
-
-
     var adventure: Adventure!
-    //var photo: Photo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //basic UI
+        UISetup()
+        
+        adventureTextView.text = "write about your favorite memories from this adventure to save and look back on."
         adventure = Adventure()
         
         //hide keyboard if we tap outside of a field
@@ -46,9 +46,7 @@ class AdventureViewController: UIViewController {
         adventure.notes = adventureTextView.text!
         adventure.me =  me.firstName
         adventure.friend = friend.friendName
-        print(midpoint.name)
         adventure.meetingLocation = midpoint.name
-        print(adventure.meetingLocation)
         adventure.friendOriginalLocation = friend.name
         adventure.myOriginalLocation = me.name
     }
@@ -60,14 +58,7 @@ class AdventureViewController: UIViewController {
             destination.me = me
             destination.friend = friend
             destination.midpoint = midpoint
-            //destination.currentUser = currentUser
         }
-//        if segue.identifier == "addPhoto"{
-//            let navigationController = segue.destination as! UINavigationController
-//            let destination = navigationController.viewControllers.first as! PhotoViewController
-//            destination.adventure = adventure
-//            destination.photo = photo
-//        }
     }
     
     func leaveViewController() {
@@ -98,24 +89,31 @@ class AdventureViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
+        adventure.deleteData(adventure: adventure) { success in
+            if success {
+                self.leaveViewController()
+            } else {
+                print("Delete unsuccessful")
+            }
+        }
     }
-    
-//    func cameraOrLibraryAlert() {
-//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//
-//        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { [self] _ in
-//            self.accessPhotoLibrary()
-//        }
-//        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [self] _ in
-//            self.accessCamera()
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//        alertController.addAction(photoLibraryAction)
-//        alertController.addAction(cameraAction)
-//        alertController.addAction(cancelAction)
-//
-//        present(alertController, animated: true, completion: nil)
-//    }
+}
+
+extension AdventureViewController{
+    func UISetup(){
+        descriptionLabel.layer.borderWidth = 0.5
+        descriptionLabel.layer.cornerRadius = 20
+        descriptionLabel.layer.borderColor = UIColor.white.cgColor
+        descriptionLabel.clipsToBounds = true
+        descriptionLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        questionLabel.layer.cornerRadius = 20
+        questionLabel.clipsToBounds = true
+        questionLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+        
+        adventureTextView.layer.cornerRadius = 20
+        adventureTextView.clipsToBounds = true
+        adventureTextView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+    }
 }
 
