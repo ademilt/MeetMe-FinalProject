@@ -33,6 +33,8 @@
 		93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC402817174F004FCCF5 /* MidpointViewController.swift */; };
 		93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC44281717B5004FCCF5 /* AdventureViewController.swift */; };
 		93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC46281717DD004FCCF5 /* HomeViewController.swift */; };
+		93CE62A1281CD40E00EDCA05 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE62A0281CD40E00EDCA05 /* UIView+addBorder.swift */; };
+		93CE62A3281CD92600EDCA05 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE62A2281CD92600EDCA05 /* Adventure.swift */; };
 		93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055AA2818368900B858D3 /* PersonalLocation.swift */; };
 		93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055AC2818369800B858D3 /* PersonalLocations.swift */; };
 		93D055B128183A8700B858D3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D055B028183A8700B858D3 /* Photo.swift */; };
@@ -72,6 +74,8 @@
 		93A7AC402817174F004FCCF5 /* MidpointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointViewController.swift; sourceTree = "<group>"; };
 		93A7AC44281717B5004FCCF5 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		93A7AC46281717DD004FCCF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		93CE62A0281CD40E00EDCA05 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
+		93CE62A2281CD92600EDCA05 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
 		93D055AA2818368900B858D3 /* PersonalLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLocation.swift; sourceTree = "<group>"; };
 		93D055AC2818369800B858D3 /* PersonalLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLocations.swift; sourceTree = "<group>"; };
 		93D055B028183A8700B858D3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -150,7 +154,6 @@
 				93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */,
 				93A7AC402817174F004FCCF5 /* MidpointViewController.swift */,
 				93A5ABA7281C93ED0017AECE /* MapViewControllers */,
-				93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */,
 				9338C4AE281654FA0088177D /* OptionViewController.swift */,
 				9338C4A4281642500088177D /* SavedViewController.swift */,
 				93A7AC3E2817171A004FCCF5 /* SavedDetailViewController.swift */,
@@ -172,6 +175,7 @@
 			children = (
 				93D055B4281844D600B858D3 /* UIViewController+Alert.swift */,
 				93D055B82818474400B858D3 /* UIBarButtonItem+Hide.swift */,
+				93CE62A0281CD40E00EDCA05 /* UIView+addBorder.swift */,
 				93D055BA2818D69100B858D3 /* APIKeys.swift */,
 			);
 			path = Utilities;
@@ -188,6 +192,7 @@
 				93A5AB83281902AA0017AECE /* FriendLocations.swift */,
 				93A5AB91281ACFF90017AECE /* MidpointLocation.swift */,
 				93A5AB95281AD0690017AECE /* MidpointLocations.swift */,
+				93CE62A2281CD92600EDCA05 /* Adventure.swift */,
 				93D055B028183A8700B858D3 /* Photo.swift */,
 				93D055B228183A8E00B858D3 /* Photos.swift */,
 			);
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				93A5AB9D281C73D60017AECE /* SearchViewController.swift */,
+				93A5ABA5281C769E0017AECE /* LocationSearchTableViewController.swift */,
 				93A5ABAA281C948C0017AECE /* RestaurantViewController.swift */,
 				93A5ABAC281C94A00017AECE /* ParkViewController.swift */,
 			);
@@ -352,6 +358,7 @@
 				93A5AB92281ACFF90017AECE /* MidpointLocation.swift in Sources */,
 				9338C49128162D6E0088177D /* LoginViewController.swift in Sources */,
 				9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */,
+				93CE62A1281CD40E00EDCA05 /* UIView+addBorder.swift in Sources */,
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
 				93A7AC45281717B5004FCCF5 /* AdventureViewController.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
@@ -374,6 +381,7 @@
 				93D055AD2818369800B858D3 /* PersonalLocations.swift in Sources */,
 				93D055B5281844D600B858D3 /* UIViewController+Alert.swift in Sources */,
 				9338C4A5281642500088177D /* SavedViewController.swift in Sources */,
+				93CE62A3281CD92600EDCA05 /* Adventure.swift in Sources */,
 				93A7AC3F2817171A004FCCF5 /* SavedDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

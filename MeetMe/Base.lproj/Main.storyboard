@@ -111,13 +111,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="bzQ-R7-ybd">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="UKv-bJ-DwZ">
-                            <color key="tintColor" red="0.89019608500000003" green="0.31764706970000001" blue="0.43137252329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="u1e-q4-MnB" kind="unwind" identifier="SignOutUnwind" unwindAction="unwindSignOutPressedWithSegue:" id="gbp-pc-XLa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="meetLabel" destination="SOf-fI-BsI" id="uRr-o3-MKs"/>
                         <outlet property="newMeetButton" destination="YyY-ht-cxc" id="sxh-oC-6pO"/>
                         <outlet property="savedMeetButton" destination="hiQ-RC-GR5" id="5CQ-V0-LPe"/>
                     </connections>
@@ -476,7 +477,7 @@
                         <outlet property="mapView" destination="Vgg-gW-eXT" id="SCu-tm-Pxr"/>
                         <outlet property="midpointIntro" destination="1b9-7c-J1J" id="RUj-Yb-FlD"/>
                         <outlet property="saveBarButton" destination="mUi-Ke-nTt" id="Q0J-JI-Zwh"/>
-                        <segue destination="hEa-0J-8Vm" kind="show" identifier="showCoffeeNearMidpoint" id="QCZ-nr-Hak"/>
+                        <segue destination="hEa-0J-8Vm" kind="show" identifier="midpointSearch" id="QCZ-nr-Hak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30t-zX-FVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -509,7 +510,7 @@
             </objects>
             <point key="canvasLocation" x="5916" y="-1536"/>
         </scene>
-        <!--Coffee Near Midpoint-->
+        <!--Search View Controller-->
         <scene sceneID="TVJ-TJ-OXx">
             <objects>
                 <viewController id="hEa-0J-8Vm" customClass="SearchViewController" customModule="MeetMe" sceneMemberID="viewController">
@@ -518,7 +519,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fw3-aO-Bpl">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xLt-za-BXu"/>
@@ -530,7 +531,7 @@
                             <constraint firstItem="Fw3-aO-Bpl" firstAttribute="trailing" secondItem="xLt-za-BXu" secondAttribute="trailing" id="qtx-3L-f0b"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Coffee Near Midpoint" id="adg-U9-qiW">
+                    <navigationItem key="navigationItem" id="adg-U9-qiW">
                         <barButtonItem key="rightBarButtonItem" title="Next" image="chevron.right" catalog="system" id="Dbz-8M-BfD"/>
                     </navigationItem>
                     <connections>
@@ -540,7 +541,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyf-kC-veQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5902.898550724638" y="-858.48214285714278"/>
+            <point key="canvasLocation" x="5916" y="-265"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y4U-Vo-2p6">
+            <objects>
+                <viewController id="pQ0-NG-mn3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5e0-ru-KpA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Smh-Vb-ufZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Szo-xs-fgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6754" y="55"/>
         </scene>
         <!--Option View Controller-->
         <scene sceneID="ycG-RU-JhI">
@@ -634,7 +650,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4r-9Q-RMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7564" y="-858"/>
+            <point key="canvasLocation" x="7625" y="-703"/>
         </scene>
         <!--Adventure View Controller-->
         <scene sceneID="QMa-Xx-O8g">
@@ -896,7 +912,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4Q-1b-E6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5916" y="503"/>
+            <point key="canvasLocation" x="7239" y="-1536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjF-JJ-zXT">
@@ -1014,7 +1030,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Gq-zTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5905" y="-174"/>
+            <point key="canvasLocation" x="6588" y="-1536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bg7-ah-Yq1">
@@ -1033,12 +1049,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mco-bB-sU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6755" y="-858"/>
+            <point key="canvasLocation" x="6755" y="-703"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u2E-gn-QXg"/>
-        <segue reference="a1d-Sb-el6"/>
+        <segue reference="lot-bS-7R8"/>
+        <segue reference="qMP-1S-o4B"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>

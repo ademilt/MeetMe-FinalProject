@@ -5,6 +5,8 @@
 //  Created by Annie DeMilt on 4/29/22.
 //
 
+//search code adapted from https://medium.com/@pravinbendre772/search-for-places-and-display-results-using-mapkit-a987bd6504df
+
 
 import UIKit
 import CoreLocation
@@ -32,26 +34,21 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
            super.viewDidLoad()
 
-//        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTableViewController
-//        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-//        resultSearchController?.searchResultsUpdater = locationSearchTable
-//
-//        let searchBar = resultSearchController!.searchBar
-//        searchBar.sizeToFit()
-//        searchBar.placeholder = "Search for somewhere to meet halfway!"
-//        navigationItem.searchController = resultSearchController
-//
-//        resultSearchController?.hidesNavigationBarDuringPresentation = false
-//        resultSearchController?.dimsBackgroundDuringPresentation = true
-//        definesPresentationContext = true
-//
-//        locationSearchTable.mapView = mapView
-//        locationSearchTable.handleMapSearchDelegate = self
-        
-        mapView.pointOfInterestFilter = MKPointOfInterestFilter(including: [.bakery, .cafe])
-        mapView.addAnnotations(mapView.annotations)
-        mapView.showAnnotations(mapView.annotations, animated: false)
-        
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTableViewController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for somewhere to meet halfway!"
+        navigationItem.searchController = resultSearchController
+
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+
+        locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
 
         setUpMapView()
         updateUserInterface()
@@ -68,7 +65,7 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
        }
        
        func updateMap() {
-           mapView.removeAnnotations(mapView.annotations)
+           //mapView.removeAnnotations(mapView.annotations)
            mapView.addAnnotation(midpoint)
            mapView.setCenter(midpoint.coordinate, animated: true)
        }
@@ -90,13 +87,10 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
                 annotationView.glyphText = "H"
                 annotationView.markerTintColor = nil
             }
-
             return annotationView
         }
-
         return nil
     }
-    
    }
 
    extension SearchViewController: CLLocationManagerDelegate {
@@ -180,25 +174,22 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
        }
    }
 
-//extension SearchViewController: HandleMapSearch {
-//    func dropPinZoomIn(placemark:MKPlacemark){
-//        // cache the pin
-//        selectedPin = placemark
-//        // clear existing pins
-//        mapView.removeAnnotations(mapView.annotations)
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = placemark.coordinate
-//        annotation.title = placemark.name
-//        if let city = placemark.locality,
-//        let state = placemark.administrativeArea {
-//            annotation.subtitle = "(city) (state)"
-//        }
-//        mapView.addAnnotation(annotation)
-//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
-//        mapView.setRegion(region, animated: true)
-//    }
-
-
+extension SearchViewController: HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        //mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+        let state = placemark.administrativeArea {
+            annotation.subtitle = "(city) (state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: midpoint.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+    }
 }
-

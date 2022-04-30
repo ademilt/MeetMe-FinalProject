@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
    
     @IBOutlet weak var newMeetButton: UIButton!
     @IBOutlet weak var savedMeetButton: UIButton!
+    @IBOutlet weak var meetLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
