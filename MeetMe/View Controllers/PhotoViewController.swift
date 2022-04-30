@@ -17,13 +17,19 @@ private let dateFormatter: DateFormatter = {
 }()
 
 class PhotoViewController: UIViewController {
-    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    @IBOutlet weak var saveBarButton: UIBarButtonItem!
-    @IBOutlet weak var deleteBarButton: UIBarButtonItem!
-    @IBOutlet weak var postedByLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var photoImageView: UIImageView!
+
+    @IBAction func cancelBarButton(_ sender: Any) {
+    }
+    
+  
+    @IBAction func saveBarButton(_ sender: UIBarButtonItem) {
+    }
+    
+
+    @IBAction func deleteBarButton(_ sender: UIBarButtonItem) {
+    }
+    
+    
     
     var adventure: Adventure!
     var photo: Photo!

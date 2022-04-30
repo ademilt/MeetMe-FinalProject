@@ -19,11 +19,11 @@ class SavedViewController: UIViewController {
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
+    
     var adventure: Adventure!
     var currentUser: AdventureUser!
     
     //var photo: Photo
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +40,11 @@ class SavedViewController: UIViewController {
         adventures.loadData {
            self.tableView.reloadData()
         }
+        
+      // print(adventure.meetingLocation)
 //        photos.loadData(spot: spot) {
 //            self.collectionView.reloadData()
 //        }
-        //updateUserInterface()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,13 +54,6 @@ class SavedViewController: UIViewController {
             destination.adventure = adventures.adventureArray[selectedIndexPath.row]
         }
     }
-    
-//    func updateUserInterface() {
-//        adventureCell.text = adventure.adventureName
-//    }
-//    func updateFromUserInterface(){
-//       
-//    }
     
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController

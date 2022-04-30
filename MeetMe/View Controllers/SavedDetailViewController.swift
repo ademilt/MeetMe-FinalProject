@@ -15,7 +15,7 @@ class SavedDetailViewController: UIViewController {
     var adventure: Adventure!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(adventure.meetingLocation)
+        print(adventure.meetingLocation)
         adventureLabel.text = "\(adventure.adventureName)"
         descriptionLabel.text = "\(adventure.me) started at \(adventure.myOriginalLocation) and \(adventure.friend) started at \(adventure.friendOriginalLocation)! we met halfway around \(adventure.meetingLocation)."
         notesField.text = "\(adventure.notes)"
