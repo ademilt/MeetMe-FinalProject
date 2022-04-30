@@ -28,6 +28,8 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
+    var currentUser: AdventureUser!
+
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var resultSearchController:UISearchController? = nil
@@ -103,12 +105,15 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
             return annotationView
         }
         return nil
+        
+        
     }
-    @IBAction func nextButtonPressed(_ sender: Any) {
+
+    
+    @IBAction func nextButtonTryPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "saveAdventure", sender: nil)
     }
-    
-   }
+}
 
    extension SearchViewController: CLLocationManagerDelegate {
        

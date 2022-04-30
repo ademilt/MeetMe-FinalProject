@@ -23,6 +23,8 @@ class MidpointViewController: UIViewController {
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
+    var currentUser: AdventureUser!
+
     
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
@@ -57,6 +59,7 @@ class MidpointViewController: UIViewController {
             destination.me = me
             destination.friend = friend
             destination.midpoint = midpoint
+            destination.currentUser = currentUser
         }
     }
     

@@ -99,6 +99,11 @@ class NewViewController: UIViewController {
         if segue.identifier == "nextMeet" {
             let destination = segue.destination as! NewFriendViewController
             destination.person = adventure
+            destination.currentUser = currentUser
+        }
+        if segue.identifier == "SavedMeet"{
+            let destination = segue.destination as! SavedViewController
+            destination.currentUser = currentUser
         }
     }
     

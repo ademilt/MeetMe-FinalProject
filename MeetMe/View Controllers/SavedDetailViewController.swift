@@ -9,6 +9,7 @@ import UIKit
 
 class SavedDetailViewController: UIViewController {
 
+    var adventure: Adventure!
     override func viewDidLoad() {
         super.viewDidLoad()
 }

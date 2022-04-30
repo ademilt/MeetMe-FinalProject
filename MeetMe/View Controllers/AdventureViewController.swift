@@ -13,13 +13,15 @@ class AdventureViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
-    
     @IBOutlet weak var adventureImageView: UIImageView!
     @IBOutlet weak var adventureTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
+    var currentUser: AdventureUser!
+
    
     var adventure: Adventure!
     //var photo: Photo!
@@ -36,12 +38,22 @@ class AdventureViewController: UIViewController {
         
         descriptionLabel.text = "\(me.firstName) and \(friend.friendName)'s adventure"
     }
-    
     func updateFromUserInterface() {
         adventure.adventureName = descriptionLabel.text ?? "our adventure"
         adventure.notes = adventureTextView.text!
         adventure.me =  me.firstName
         adventure.friend = friend.friendName
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromUserInterface()
+        if segue.identifier == "saveAdventure" {
+            let destination = segue.destination as! SavedViewController
+            destination.me = me
+            destination.friend = friend
+            destination.midpoint = midpoint
+            destination.currentUser = currentUser
+        }
     }
     
     func leaveViewController() {

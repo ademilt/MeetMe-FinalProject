@@ -16,53 +16,51 @@ class LocationSearchTableViewController: UITableViewController {
     var mapView: MKMapView? = nil
     var handleMapSearchDelegate:HandleMapSearch? = nil
     
+//    func showPointsOfInterest() {
+//            let searchRequest = MKLocalPointsOfInterestRequest(center: midpoint.coordinate, radius: 10)
+//            // searchRequest.naturalLanguageQuery = "tesla chargers"
+//            searchRequest.pointOfInterestFilter = MKPointOfInterestFilter(including: [.bank, .atm])
+//            searchRequest.region = mapView.region
+//            searchRequest.resultTypes = [.pointOfInterest, .address]
+//
+//            let search = MKLocalSearch(request: searchRequest)
+//            search.start { response, error in
+//                guard let response = response else {
+//                    print("Error: \(error?.localizedDescription ?? "No error specified").")
+//                    return
+//                }
+//                // Create annotation for every map item
+//                for mapItem in response.mapItems {
+//                    let annotation = MKPointAnnotation()
+//                    annotation.coordinate = mapItem.placemark.coordinate
+//
+//                    annotation.title = mapItem.name
+//                    annotation.subtitle = mapItem.phoneNumber
+//
+//                    self.mapView.addAnnotation(annotation)
+//                }
+//                self.mapView.setRegion(response.boundingRegion, animated: true)
+//            }
+//        }
+    }
     
-    //func showPointsOfInterest() {
-    //        let searchRequest = MKLocalSearch.Request()
-    //        // searchRequest.naturalLanguageQuery = "tesla chargers"
-    //        searchRequest.pointOfInterestFilter = MKPointOfInterestFilter(including: [.bank, .atm]) // or you can use excluding
-    //        searchRequest.region = mapView.region
-    //        searchRequest.resultTypes = [.pointOfInterest, .address]
-    //
-    //        let search = MKLocalSearch(request: searchRequest)
-    //        search.start { response, error in
-    //            guard let response = response else {
-    //                print("Error: \(error?.localizedDescription ?? "No error specified").")
-    //                return
-    //            }
-    //            // Create annotation for every map item
-    //            for mapItem in response.mapItems {
-    //                let annotation = MKPointAnnotation()
-    //                annotation.coordinate = mapItem.placemark.coordinate
-    //
-    //                annotation.title = mapItem.name
-    //                annotation.subtitle = mapItem.phoneNumber
-    //
-    //                self.mapView.addAnnotation(annotation)
-    //            }
-    //            self.mapView.setRegion(response.boundingRegion, animated: true)
-    //        }
-    //    }
-    //}
-    
-}
 
 extension LocationSearchTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let mapView = mapView,
-            let searchBarText = searchController.searchBar.text else { return }
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = searchBarText
-        request.region = mapView.region
-        let search = MKLocalSearch(request: request)
+                guard let mapView = mapView,
+                    let searchBarText = searchController.searchBar.text else { return }
+                let request = MKLocalSearch.Request()
+                request.naturalLanguageQuery = searchBarText
+                request.region = mapView.region
+                let search = MKLocalSearch(request: request)
         search.start { response, _ in
-            guard let response = response else {
-                return
+                    guard let response = response else {
+                        return
+                    }
+                    self.matchingItems = response.mapItems
+                    self.tableView.reloadData()
+                }
             }
-            self.matchingItems = response.mapItems
-            self.tableView.reloadData()
-        }
-    }
 }
 
 extension LocationSearchTableViewController {

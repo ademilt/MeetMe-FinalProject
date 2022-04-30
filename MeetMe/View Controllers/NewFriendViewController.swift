@@ -22,6 +22,8 @@ class NewFriendViewController: UIViewController {
     
     var friendAdventure: FriendLocation!
     var person: PersonalLocation!
+    var currentUser: AdventureUser!
+
     let regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
@@ -58,7 +60,7 @@ class NewFriendViewController: UIViewController {
     }
     
     func setUpMapView() {
-        let region = MKCoordinateRegion(center: friendAdventure.coordinate, latitudinalMeters: regionDistance , longitudinalMeters: regionDistance)
+        let region = MKCoordinateRegion(center: person.coordinate, latitudinalMeters: regionDistance , longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
     }
     
@@ -110,6 +112,7 @@ class NewFriendViewController: UIViewController {
             let destination = segue.destination as! MidpointViewController
             destination.me = person
             destination.friend = friendAdventure
+            destination.currentUser = currentUser
         }
     }
     
@@ -131,7 +134,7 @@ class NewFriendViewController: UIViewController {
         friendAdventure.saveData(person: person) { success in
             if success {
                 //self.leaveViewController()
-                print("****** I'm about to perform a segue!")
+                //print("****** I'm about to perform a segue!")
                 self.performSegue(withIdentifier: "findMidpoint", sender: nil)
             } else {
                 //ERROR during save occured
