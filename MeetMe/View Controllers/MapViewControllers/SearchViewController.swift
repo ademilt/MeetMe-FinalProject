@@ -78,7 +78,7 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
        func updateMap() {
            //mapView.removeAnnotations(mapView.annotations)
            mapView.addAnnotation(midpoint)
-           mapView.setCenter(midpoint.coordinate, animated: true)
+           //mapView.setCenter(midpoint.coordinate, animated: true)
        }
        
        func leaveViewController(){

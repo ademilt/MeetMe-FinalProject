@@ -31,7 +31,6 @@
 		93A7AC3D281716DF004FCCF5 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */; };
 		93A7AC3F2817171A004FCCF5 /* SavedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC3E2817171A004FCCF5 /* SavedDetailViewController.swift */; };
 		93A7AC412817174F004FCCF5 /* MidpointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC402817174F004FCCF5 /* MidpointViewController.swift */; };
-		93A7AC45281717B5004FCCF5 /* AdventureViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC44281717B5004FCCF5 /* AdventureViewController1.swift */; };
 		93A7AC47281717DD004FCCF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A7AC46281717DD004FCCF5 /* HomeViewController.swift */; };
 		93CE62A1281CD40E00EDCA05 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE62A0281CD40E00EDCA05 /* UIView+addBorder.swift */; };
 		93CE62A3281CD92600EDCA05 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE62A2281CD92600EDCA05 /* Adventure.swift */; };
@@ -72,7 +71,6 @@
 		93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
 		93A7AC3E2817171A004FCCF5 /* SavedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDetailViewController.swift; sourceTree = "<group>"; };
 		93A7AC402817174F004FCCF5 /* MidpointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidpointViewController.swift; sourceTree = "<group>"; };
-		93A7AC44281717B5004FCCF5 /* AdventureViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController1.swift; sourceTree = "<group>"; };
 		93A7AC46281717DD004FCCF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		93CE62A0281CD40E00EDCA05 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 		93CE62A2281CD92600EDCA05 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				93A7AC3A2817169C004FCCF5 /* NewViewController.swift */,
 				93A7AC3C281716DF004FCCF5 /* NewFriendViewController.swift */,
 				93A7AC402817174F004FCCF5 /* MidpointViewController.swift */,
-				93A7AC44281717B5004FCCF5 /* AdventureViewController1.swift */,
 				936A1A28281D03CC007B72AD /* AdventureViewController.swift */,
 				93A5ABA7281C93ED0017AECE /* MapViewControllers */,
 				9338C4AE281654FA0088177D /* OptionViewController.swift */,
@@ -359,7 +356,6 @@
 				9338C4AF281654FB0088177D /* OptionViewController.swift in Sources */,
 				93CE62A1281CD40E00EDCA05 /* UIView+addBorder.swift in Sources */,
 				9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */,
-				93A7AC45281717B5004FCCF5 /* AdventureViewController1.swift in Sources */,
 				9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */,
 				93A7AC392817133F004FCCF5 /* SavedTableViewCell.swift in Sources */,
 				93D055AB2818368900B858D3 /* PersonalLocation.swift in Sources */,
