@@ -32,7 +32,7 @@ class NewFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //UI in viewDidLoad
        UISetup()
         
@@ -47,11 +47,12 @@ class NewFriendViewController: UIViewController {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
+        setUpMapView()
+
         getLocation()
         if friendAdventure == nil {
             friendAdventure = FriendLocation()
         }
-        setUpMapView()
         updateUserInterface()
     }
     
@@ -66,6 +67,7 @@ class NewFriendViewController: UIViewController {
     func setUpMapView() {
         let region = MKCoordinateRegion(center: person.coordinate, latitudinalMeters: regionDistance , longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
+        mapView.setCenter(person.coordinate, animated: true)
     }
     
     func updateUserInterface() {
@@ -79,7 +81,7 @@ class NewFriendViewController: UIViewController {
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(friendAdventure)
-        //mapView.setCenter(friendAdventure.coordinate, animated: true)
+        //mapView.setCenter(person.coordinate, animated: true)
     }
     
     //function to keep map annotation from previous view controller, adapted from Stack Overflow https://stackoverflow.com/questions/62179614/passing-data-from-a-map-annotation-to-a-new-view-controller
@@ -87,7 +89,7 @@ class NewFriendViewController: UIViewController {
         let places = person.map { placeOnMap -> MKPointAnnotation in
             let place = MKPointAnnotation()
             place.coordinate =  CLLocationCoordinate2D(latitude: placeOnMap.latitude, longitude: placeOnMap.longitude)
-            place.title = placeOnMap.firstName
+            place.title = placeOnMap.name
             return place
         }
         mapView.addAnnotation(places!)

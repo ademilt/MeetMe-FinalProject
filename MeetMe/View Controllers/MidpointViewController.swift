@@ -264,5 +264,6 @@ extension MidpointViewController{
     addressLabel.layer.cornerRadius = 20
     addressLabel.clipsToBounds = true
     addressLabel.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
+    mapView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
 }
 }

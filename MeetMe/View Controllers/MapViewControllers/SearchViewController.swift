@@ -54,6 +54,7 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         locationSearchTable.handleMapSearchDelegate = self
         
         setUpMapView()
+        setupAnnotations()
         updateUserInterface()
     }
     
@@ -70,6 +71,25 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: midpoint.coordinate, span: span)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func setupAnnotations() {
+        let places = me.map { placeOnMap -> MKPointAnnotation in
+            let place = MKPointAnnotation()
+            place.coordinate =  CLLocationCoordinate2D(latitude: placeOnMap.latitude, longitude: placeOnMap.longitude)
+            place.title = placeOnMap.firstName
+            return place
+        }
+        
+        let places1 = friend.map { placeOnMap -> MKPointAnnotation in
+            let place = MKPointAnnotation()
+            place.coordinate =  CLLocationCoordinate2D(latitude: placeOnMap.latitude, longitude: placeOnMap.longitude)
+            place.title = placeOnMap.friendName
+            return place
+        }
+        mapView.addAnnotation(places!)
+        mapView.addAnnotation(places1!)
+        mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
     
     func updateUserInterface() {
@@ -95,11 +115,12 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier:
                                                                         MKMapViewDefaultAnnotationViewReuseIdentifier,
                                                                       for: annotation) as? MKMarkerAnnotationView {
+            //annotationView.markerTintColor = UIColor.green
             if annotation is MKPointAnnotation {
                 annotationView.glyphText = "H"
                 annotationView.markerTintColor = nil
             }
-            return annotationView
+                return annotationView
         }
         return nil
     }
@@ -195,11 +216,12 @@ extension SearchViewController: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
         // cache the pin
         selectedPin = placemark
-        // clear existing pins
+        // keep existing annotations
         //mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        //annotation.markerTintColor = UIColor.green
         if let city = placemark.locality,
            let state = placemark.administrativeArea {
             annotation.subtitle = "(city) (state)"

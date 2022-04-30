@@ -31,13 +31,17 @@ class AdventureViewController: UIViewController {
         //basic UI
         UISetup()
         
+        //setting up placeholder text in adventure text view
+        adventureTextView.delegate = self
         adventureTextView.text = "write about your favorite memories from this adventure to save and look back on."
+
         adventure = Adventure()
         
         //hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+        //textViewDidBeginEditing(textView: adventureTextView)
         
         descriptionLabel.text = "\(me.firstName) and \(friend.friendName)'s adventure"
     }
@@ -60,6 +64,7 @@ class AdventureViewController: UIViewController {
             destination.midpoint = midpoint
         }
     }
+    
     
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController
@@ -116,4 +121,20 @@ extension AdventureViewController{
         adventureTextView.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.gray, radius: 2.0, opacity: 0.35)
     }
 }
+extension AdventureViewController: UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
 
+            if !adventureTextView.text!.isEmpty && adventureTextView.text! == "write about your favorite memories from this adventure to save and look back on." {
+                adventureTextView.text = ""
+                adventureTextView.textColor = UIColor.darkGray
+            }
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView) {
+        
+            if adventureTextView.text.isEmpty {
+                adventureTextView.text = "write about your favorite memories from this adventure to save and look back on."
+                adventureTextView.textColor = UIColor.lightGray
+            }
+        }
+}
