@@ -654,20 +654,35 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="LTN-uH-Wlw"/>
                         <barButtonItem title="Item" image="trash.fill" catalog="system" id="3Lt-hs-2s8">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="deleteButtonPressed:" destination="h39-Ur-D7j" id="ycz-X2-ix6"/>
+                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dV2-IT-lhj">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="eK6-zR-DuA">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="h39-Ur-D7j" id="hWf-Rg-LhU"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="03X-iS-z3Y">
                             <color key="tintColor" red="0.32156863810000003" green="0.70980393890000004" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
+                                <action selector="saveButtonPressed:" destination="h39-Ur-D7j" id="Cot-gm-ETU"/>
                                 <segue destination="ZCj-op-EZl" kind="show" identifier="showSavedAdventures" id="eQP-32-hlE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="adventureImageView" destination="6tb-8R-q58" id="udY-wQ-bat"/>
+                        <outlet property="adventureTextView" destination="Dvk-dA-iUF" id="57e-Nx-w14"/>
+                        <outlet property="cancelBarButton" destination="eK6-zR-DuA" id="OKN-v5-BP9"/>
+                        <outlet property="deleteButton" destination="3Lt-hs-2s8" id="m3B-oR-Ovr"/>
+                        <outlet property="descriptionLabel" destination="ia7-pk-Z2J" id="RLf-es-8zy"/>
+                        <outlet property="saveBarButton" destination="03X-iS-z3Y" id="WmO-To-wZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hql-nT-6vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

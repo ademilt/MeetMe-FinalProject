@@ -10,6 +10,13 @@ import UIKit
 class AdventureViewController: UIViewController {
     
     
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
+    @IBOutlet weak var adventureImageView: UIImageView!
+    @IBOutlet weak var adventureTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     var me: PersonalLocation!
     var friend: FriendLocation!
     var midpoint: MidpointLocation!
@@ -46,6 +53,23 @@ class AdventureViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        leaveViewController()
+    }
     
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        updateFromUserInterface()
+        adventure.saveData(person: me, friend: friend, midpoint: midpoint) { success in
+            if success {
+                self.performSegue(withIdentifier: "saveAdventure", sender: nil)
+            } else {
+                //ERROR during save occured
+                self.oneButtonAlert(title: "Save Failed", message: "For some reason the data would not save to the cloud")
+            }
+        }
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+    }
 }
 
