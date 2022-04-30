@@ -22,6 +22,9 @@ class SavedViewController: UIViewController {
     var adventure: Adventure!
     var currentUser: AdventureUser!
 
+//    we need to load PersonalLocation, this is the root document for all subdocuments
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,9 +37,9 @@ class SavedViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setToolbarHidden(false, animated: true)
 
-        adventures.loadData(person: me, friend: friend, midpoint: midpoint) {
-            self.tableView.reloadData()
-        }
+        //adventures.loadData(person: me, friend: friend, midpoint: midpoint) {
+           // self.tableView.reloadData()
+        //}
         //updateUserInterface()
     }
     

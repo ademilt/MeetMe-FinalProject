@@ -47,12 +47,12 @@ class AdventureViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         updateFromUserInterface()
-        if segue.identifier == "saveAdventure" {
+        if segue.identifier == "savedAdventure" {
             let destination = segue.destination as! SavedViewController
             destination.me = me
             destination.friend = friend
             destination.midpoint = midpoint
-            destination.currentUser = currentUser
+            //destination.currentUser = currentUser
         }
     }
     
@@ -69,17 +69,34 @@ class AdventureViewController: UIViewController {
         leaveViewController()
     }
     
-    @IBAction func saveButtonPressed(_ sender: Any) {
+    @IBAction func saveTryButtonPressed(_ sender: UIBarButtonItem) {
         updateFromUserInterface()
-        adventure.saveData(person: me, friend: friend, midpoint: midpoint) { success in
+        print("Save button has been pressed.")
+        adventure.saveData(person: me, friend: friend, midpoint: midpoint) {
+            success in
             if success {
-                self.performSegue(withIdentifier: "saveAdventure", sender: nil)
+                self.performSegue(withIdentifier: "savedAdventure", sender: nil)
             } else {
                 //ERROR during save occured
                 self.oneButtonAlert(title: "Save Failed", message: "For some reason the data would not save to the cloud")
             }
         }
     }
+    
+    
+//    @IBAction func saveButtonPressed(_ sender: Any) {
+//        updateFromUserInterface()
+//        print("Save button has been pressed.")
+//        adventure.saveData(person: me, friend: friend, midpoint: midpoint) {
+//            success in
+//            if success {
+//                self.performSegue(withIdentifier: "savedAdventure", sender: nil)
+//            } else {
+//                //ERROR during save occured
+//                self.oneButtonAlert(title: "Save Failed", message: "For some reason the data would not save to the cloud")
+//            }
+//        }
+//    }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
     }

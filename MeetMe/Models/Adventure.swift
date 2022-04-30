@@ -46,6 +46,7 @@ class Adventure{
             self.init(adventureName: adventureName, me: me, friend:  friend, notes:notes, postingUserID: postingUserID, documentID: "")
     }
     
+    
     func saveData(person: PersonalLocation, friend: FriendLocation, midpoint: MidpointLocation, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         // Grab the user id
@@ -81,6 +82,42 @@ class Adventure{
         }
 
     }
+    
+//    func saveData(person: PersonalLocation, friend: FriendLocation, midpoint: MidpointLocation, completion: @escaping (Bool) -> ()) {
+//        let db = Firestore.firestore()
+//        // Grab the user id
+//        guard let postingUserID = Auth.auth().currentUser?.uid else {
+//            print("😡 ERROR: Could not save data because we don't have a valid postingUserID.")
+//            return completion(false)
+//        }
+//        self.postingUserID = postingUserID
+//        // Create the dictionary representing data we want to save
+//        let dataToSave: [String: Any] = self.dictionary
+//        // if we HAVE saved a record, we'll have an ID, otherwise .addDocument will create one
+//        if self.documentID == "" {
+//            var ref: DocumentReference? = nil // Firestore will create a new ID for us
+//            ref = db.collection("users").document(postingUserID).collection("adventures").document(person.documentID).collection("friend").document(friend.documentID).collection("midpoint").document(midpoint.documentID).collection("adventure").addDocument(data: dataToSave){ error in
+//                guard error == nil else {
+//                    print("😡 ERROR: Adding document \(error!.localizedDescription).")
+//                    return completion(false)
+//                }
+//                self.documentID = ref!.documentID
+//                print("😀 Added document \(self.documentID) to the cloud. It worked!")
+//                completion(true)
+//            }
+//        } else { // else save to the existing document id with .setData
+//            let ref = db.collection("users").document(postingUserID).collection("adventures").document(person.documentID).collection("friend").document(friend.documentID).collection("midpoint").document(midpoint.documentID).collection("adventure").document(self.documentID)
+//            ref.setData(dataToSave) { error in
+//                guard error == nil else {
+//                    print("😡 ERROR: Updating document \(error!.localizedDescription).")
+//                    return completion(false)
+//                }
+//                print("😀 Updated document \(self.documentID) to the cloud. It worked!")
+//                completion(true)
+//            }
+//        }
+//
+//    }
     
     func deleteData(adventure: Adventure, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
