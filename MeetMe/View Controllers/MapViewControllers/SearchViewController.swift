@@ -115,6 +115,7 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier:
                                                                         MKMapViewDefaultAnnotationViewReuseIdentifier,
                                                                       for: annotation) as? MKMarkerAnnotationView {
+            
             //annotationView.markerTintColor = UIColor.green
             if annotation is MKPointAnnotation {
                 annotationView.glyphText = "H"
@@ -124,7 +125,6 @@ class SearchViewController: UIViewController, MKMapViewDelegate {
         }
         return nil
     }
-    
     
     @IBAction func nextButtonTryPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "saveAdventure", sender: nil)
@@ -232,3 +232,4 @@ extension SearchViewController: HandleMapSearch {
         mapView.setRegion(region, animated: true)
     }
 }
+
