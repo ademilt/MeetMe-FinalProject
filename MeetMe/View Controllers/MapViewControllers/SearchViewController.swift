@@ -7,14 +7,14 @@
 
 //search code adapted from https://medium.com/@pravinbendre772/search-for-places-and-display-results-using-mapkit-a987bd6504df
 
-
 import UIKit
 import CoreLocation
 import GooglePlaces
 import MapKit
 import Contacts
 
-//can only constrain map search to specific region, but may not stay within the bounds
+//can only constrain map search to specific region, but may not stay within the bounds (manually Zoom in to region to emphasize constraints)
+
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
