@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app will need the device location in order to determine the distance from a spot to the device, and to plot the user&apos;s location on a map.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app will need the device location in order to determine the distance from a spot to the device, and to plot the user&apos;s location on a map.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -13,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.448497715953-tr1ndrcda635tek7od7jh4rprso8hqi3</string>
+				<string>com.googleusercontent.apps.1060737747309-dg6l2ath4ld6m193jj4lk0tcdk283108</string>
 			</array>
 		</dict>
 	</array>

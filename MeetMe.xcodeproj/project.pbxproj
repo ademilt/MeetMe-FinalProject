@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5E5CF8F8DBF5E5A2AF039073 /* Pods_MeetMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341866DC42954B0F49AA654E /* Pods_MeetMe.framework */; };
+		932D2E94281F89C100149E5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 932D2E93281F89C100149E5D /* GoogleService-Info.plist */; };
 		9338C48D28162D6E0088177D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C48C28162D6E0088177D /* AppDelegate.swift */; };
 		9338C48F28162D6E0088177D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C48E28162D6E0088177D /* SceneDelegate.swift */; };
 		9338C49128162D6E0088177D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C49028162D6E0088177D /* LoginViewController.swift */; };
 		9338C49428162D6E0088177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49228162D6E0088177D /* Main.storyboard */; };
 		9338C49628162D700088177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49528162D700088177D /* Assets.xcassets */; };
 		9338C49928162D700088177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9338C49728162D700088177D /* LaunchScreen.storyboard */; };
-		9338C4A1281634C10088177D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9338C4A0281634C10088177D /* GoogleService-Info.plist */; };
 		9338C4A5281642500088177D /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338C4A4281642500088177D /* SavedViewController.swift */; };
 		936A1A27281CEBE6007B72AD /* Adventures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A1A26281CEBE6007B72AD /* Adventures.swift */; };
 		936A1A29281D03CC007B72AD /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A1A28281D03CC007B72AD /* AdventureViewController.swift */; };
@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		341866DC42954B0F49AA654E /* Pods_MeetMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		932D2E93281F89C100149E5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9338C48928162D6E0088177D /* MeetMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9338C48C28162D6E0088177D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9338C48E28162D6E0088177D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		9338C49528162D700088177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9338C49828162D700088177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9338C49A28162D700088177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9338C4A0281634C10088177D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9338C4A4281642500088177D /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		936A1A26281CEBE6007B72AD /* Adventures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventures.swift; sourceTree = "<group>"; };
 		936A1A28281D03CC007B72AD /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				9338C49528162D700088177D /* Assets.xcassets */,
 				9338C49728162D700088177D /* LaunchScreen.storyboard */,
 				9338C49A28162D700088177D /* Info.plist */,
-				9338C4A0281634C10088177D /* GoogleService-Info.plist */,
+				932D2E93281F89C100149E5D /* GoogleService-Info.plist */,
 			);
 			path = MeetMe;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9338C49928162D700088177D /* LaunchScreen.storyboard in Resources */,
-				9338C4A1281634C10088177D /* GoogleService-Info.plist in Resources */,
+				932D2E94281F89C100149E5D /* GoogleService-Info.plist in Resources */,
 				9338C49628162D700088177D /* Assets.xcassets in Resources */,
 				9338C49428162D6E0088177D /* Main.storyboard in Resources */,
 			);
@@ -521,6 +521,8 @@
 				DEVELOPMENT_TEAM = 7Q8HJYD3T5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeetMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app will need the device location in order to determine the distance from a spot to the device, and to plot the user's location on a map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will need the device location in order to determine the distance from a spot to the device, and to plot the user's location on a map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -531,7 +533,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Annie.MeetMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Annie.MeetMeToo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -550,6 +552,8 @@
 				DEVELOPMENT_TEAM = 7Q8HJYD3T5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeetMe/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app will need the device location in order to determine the distance from a spot to the device, and to plot the user's location on a map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will need the device location in order to determine the distance from a spot to the device, and to plot the user's location on a map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -560,7 +564,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Annie.MeetMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Annie.MeetMeToo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
